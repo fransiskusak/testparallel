@@ -1,8 +1,7 @@
 package com.mycompany.masterserenityjbehave.steps.serenity;
 
-import com.mycompany.masterserenityjbehave.pages.DictionaryPage;
+import com.mycompany.masterserenityjbehave.pages.HomePage;
 import net.thucydides.core.annotations.Step;
-import net.thucydides.core.steps.ScenarioSteps;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
@@ -10,31 +9,40 @@ import static org.hamcrest.Matchers.hasItem;
 
 public class EndUserSteps {
 
-    DictionaryPage dictionaryPage;
+    HomePage homePage;
 
     @Step
-    public void enters(String keyword) {
-        dictionaryPage.enter_keywords(keyword);
+    public void beradaDiHomepage() {
+        homePage.open();
     }
 
     @Step
-    public void starts_search() {
-        dictionaryPage.lookup_terms();
+    public void mengeklikBoxUsername() {
+        homePage.klikUsername();
+    }
+    @Step
+    public void mengetikUsername(String username) {
+        homePage.ketikUsername(username);
     }
 
     @Step
-    public void should_see_definition(String definition) {
-        assertThat(dictionaryPage.getDefinitions(), hasItem(containsString(definition)));
+    public void mengeklikBoxPassword() {
+        homePage.klikPassword();
+    }
+    @Step
+    public void mengetikPassword(String password) {
+        homePage.ketikPassword(password);
     }
 
     @Step
-    public void is_the_home_page() {
-        dictionaryPage.open();
+    public void mengeklikLogin(){
+        homePage.klikLogin();
+    }
+    @Step
+    public void akanMelihatNamaPengguna(String nama) {
+        homePage.lihatNama().shouldContainText(nama);
+        //assertThat(homePage.lihatNama(), hasItem(containsString(nama)));
     }
 
-    @Step
-    public void looks_for(String term) {
-        enters(term);
-        starts_search();
-    }
+
 }
