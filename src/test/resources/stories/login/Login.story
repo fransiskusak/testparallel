@@ -11,4 +11,11 @@ When Pengguna mengetik usernamenya 'FRANSISKUSAK'
 When Pengguna mengeklik textboxt Password
 When Pengguna mengetik passwordnya 'Elokfrans24.'
 When Pengguna mengeklik tombol login
-Then Pengguna akan melihat Nama User yaitu 'F A Kristiawan P G S'
+Then Pengguna akan melihat Nama User yaitu F A Kristiawan P G S
+
+Scenario: Mencari Course
+Given Pengguna berada pada Halaman Dashboard e-LOK
+When Pengguna mengeklik textboxt Search Courses
+When Pengguna mengetik 'Big Data Komputasional'
+When Pengguna mengeklik tombol cari
+Then Pengguna akan melihat Nama Matakuliah Big Data Komputasional

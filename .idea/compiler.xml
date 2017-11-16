@@ -22,10 +22,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="elok" />
         <module name="masterSerenityJbehave" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="elok" target="1.7" />
       <module name="masterSerenityJbehave" target="1.7" />
     </bytecodeTargetLevel>
   </component>
