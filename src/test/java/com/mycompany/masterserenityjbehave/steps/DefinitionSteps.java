@@ -1,14 +1,15 @@
 package com.mycompany.masterserenityjbehave.steps;
 
-import org.jbehave.core.annotations.Given;
-import org.jbehave.core.annotations.Then;
-import org.jbehave.core.annotations.When;
+import net.thucydides.core.annotations.Steps;
+import org.jbehave.core.annotations.*;
 
 import com.mycompany.masterserenityjbehave.steps.serenity.EndUserSteps;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class EnrollmentSteps {
+public class DefinitionSteps {
 
-    @net.thucydides.core.annotations.Steps
+    @Steps
     EndUserSteps endUser;
 
     @Given("Pengguna berada pada Homepage e-LOK")
@@ -36,9 +37,9 @@ public class EnrollmentSteps {
     @When("Pengguna mengeklik tombol login")
     public void penggunaMengeklikLogin(){endUser.mengeklikLogin();}
 
-    @Then("Pengguna akan melihat Nama User yaitu F A Kristiawan P G S")
-    public void akanMelihatNamaPengguna() {
-//        endUser.akanMelihatNamaPengguna(nama);
+    @Then("Pengguna akan melihat Nama User yaitu '$nama'")
+    public void akanMelihatNamaPengguna(String nama) {
+        endUser.akanLihatNamaPengguna(nama);
     }
 
 
@@ -53,6 +54,11 @@ public class EnrollmentSteps {
     public void penggunaKlikCari(){endUser.mengeklikCariCourse();}
 
     @Then("Pengguna akan melihat Nama Matakuliah Big Data Komputasional")
-    public void penggunaMelihatNamaMatakuliahBigData(){    }
+    public void penggunaMelihatNamaMatakuliahBigData(){endUser.menemukanBigData();}
+
+//    @AfterScenario
+//    public void afterScenario() {
+//        driver.quit();
+//    }
 
 }
