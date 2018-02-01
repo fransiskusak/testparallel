@@ -22,7 +22,7 @@ public class HomePage extends PageObject {
     @org.openqa.selenium.support.FindBy(xpath ="html/body/div[1]/div[2]/header[1]/div/div/div[2]/div/form/div[1]/input[2]" )
     private WebElementFacade boxPassword;
 
-    @FindBy( id = "yui_3_17_2_1_1512032464258_228")
+    @FindBy(className = "usertext")
     private WebElementFacade textNamauser;
 
 
@@ -43,4 +43,20 @@ public class HomePage extends PageObject {
         return textNamauser;
     }
 
+    @FindBy(xpath = "html/body/div[1]/div[2]/header[1]/div/div/div[2]/div/div/div[3]/div/ul[1]/li/a/span/span[1]")
+    private WebElementFacade tblNama;
+
+    @FindBy(xpath = "html/body/div[1]/div[2]/header[1]/div/div/div[2]/div/div/div[3]/div/ul[2]/li[8]/a/span\n")
+    private WebElementFacade tblLogout;
+
+    @FindBy(className = "main-heading")
+    private WebElementFacade textDiHomepage;
+
+    public void klikNama() {tblNama.click();}
+
+    public void klikLogout() {tblLogout.click();}
+
+    public WebElementFacade lihatTulisan() {
+        return textDiHomepage;
+    }
 }

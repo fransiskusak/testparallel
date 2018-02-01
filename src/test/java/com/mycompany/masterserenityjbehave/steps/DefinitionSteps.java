@@ -38,9 +38,7 @@ public class DefinitionSteps {
     public void penggunaMengeklikLogin(){endUser.mengeklikLogin();}
 
     @Then("Pengguna akan melihat Nama User yaitu '$nama'")
-    public void akanMelihatNamaPengguna(String nama) {
-        endUser.akanLihatNamaPengguna(nama);
-    }
+    public void akanMelihatNamaPengguna(String nama) {endUser.akanLihatNamaPengguna(nama);}
 
 
 
@@ -55,6 +53,18 @@ public class DefinitionSteps {
 
     @Then("Pengguna akan melihat Nama Matakuliah Big Data Komputasional")
     public void penggunaMelihatNamaMatakuliahBigData(){endUser.menemukanBigData();}
+
+
+
+
+    @When("Pengguna mengeklik nama")
+    public void penggunaKlikNama(){endUser.mengeklikNama();}
+
+    @When("Pengguna mengeklik Logout")
+    public void penggunaKlikLogout(){endUser.mengeklikLogout();}
+
+    @Then("Pengguna akan melihat Tulisan")
+    public void penggunaLihatTulisanDiHomepage(){endUser.akanLihatTulisan();}
 
 //    @AfterScenario
 //    public void afterScenario() {

@@ -78,4 +78,15 @@ public class EndUserSteps extends ScenarioSteps {
 
     }
 
+
+    @Step
+    public void mengeklikNama() {homePage.klikNama();}
+
+    @Step
+    public void mengeklikLogout() {homePage.klikLogout();}
+
+    @Step
+    public void akanLihatTulisan() {homePage.lihatTulisan();}
+
+
 }
