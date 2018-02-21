@@ -16,23 +16,36 @@ import static ch.lambdaj.Lambda.convert;
 @DefaultUrl("https://www.elok.ugm.ac.id/")
 public class HomePage extends PageObject {
 
-    @org.openqa.selenium.support.FindBy(xpath = "html/body/div[1]/div[2]/header[1]/div/div/div[2]/div/form/div[1]/input[1]")
+    @FindBy(xpath = "html/body/div[1]/div[2]/header[1]/div/div/div[2]/div/form/div[1]/input[1]")
     private WebElementFacade boxUsername;
 
-    @org.openqa.selenium.support.FindBy(xpath ="html/body/div[1]/div[2]/header[1]/div/div/div[2]/div/form/div[1]/input[2]" )
+    @FindBy(xpath ="html/body/div[1]/div[2]/header[1]/div/div/div[2]/div/form/div[1]/input[2]" )
     private WebElementFacade boxPassword;
 
     @FindBy(className = "usertext")
     private WebElementFacade textNamauser;
 
-
-
     @FindBy(xpath = "html/body/div[1]/div[2]/header[1]/div/div/div[2]/div/form/div[1]/input[3]")
     private WebElementFacade tombolLogin;
 
+    @FindBy(xpath = "html/body/div[1]/div[2]/header[1]/div/div/div[2]/div/div/div[3]/div/ul[2]/li[8]/a/span\n")
+    private WebElementFacade tblLogout;
+
+    @FindBy(className = "main-heading")
+    private WebElementFacade textDiHomepage;
+
+    @FindBy(xpath = "html/body/div[1]/div[2]/header[2]/nav/div/div/ul[1]/li[1]/a")
+    private WebElementFacade tombolRegister;
+
+///////////////////////////////////////////////////////////////////////////
+
+
     public void klikUsername() {boxUsername.click();}
+
     public void ketikUsername(String username) {boxUsername.type(username);}
+
     public void klikPassword() {boxPassword.click();}
+
     public void ketikPassword(String password) {
         boxPassword.type(password);
     }
@@ -43,20 +56,14 @@ public class HomePage extends PageObject {
         return textNamauser;
     }
 
-    @FindBy(xpath = "html/body/div[1]/div[2]/header[1]/div/div/div[2]/div/div/div[3]/div/ul[1]/li/a/span/span[1]")
-    private WebElementFacade tblNama;
-
-    @FindBy(xpath = "html/body/div[1]/div[2]/header[1]/div/div/div[2]/div/div/div[3]/div/ul[2]/li[8]/a/span\n")
-    private WebElementFacade tblLogout;
-
-    @FindBy(className = "main-heading")
-    private WebElementFacade textDiHomepage;
-
-    public void klikNama() {tblNama.click();}
+    public void klikNama() {textNamauser.click();}
 
     public void klikLogout() {tblLogout.click();}
 
     public WebElementFacade lihatTulisan() {
         return textDiHomepage;
     }
+
+    public void klikRegister() {tombolRegister.click();}
+
 }

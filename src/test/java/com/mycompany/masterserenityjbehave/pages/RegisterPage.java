@@ -27,7 +27,7 @@ public class RegisterPage extends PageObject {
     private WebElementFacade boxSurname ;
 
     @FindBy(xpath = "html/body/div[3]/div[2]/div/section/div/form/fieldset[2]/div/div[5]/div[2]/input")
-    private WebElementFacade boxCityTowne ;
+    private WebElementFacade boxCityTown ;
 
     @FindBy(xpath = "html/body/div[3]/div[2]/div/section/div/form/fieldset[2]/div/div[6]/div[2]/select")
     private WebElementFacade dropdownCountry ;
@@ -43,6 +43,45 @@ public class RegisterPage extends PageObject {
 //
 //    @FindBy(xpath = "")
 //    private WebElementFacade boxSurname ;
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public void klikTombolUsername() {boxUsername.click();}
+
+    public void masukkanUsername(String username ) {boxUsername.type(username);}
+
+    public void klikBoxPassword() {boxPassword.click();}
+
+    public void masukkanPassword(String password ) {boxPassword.type(password);}
+
+    public void klikEmail() {boxEmail.click();}
+
+    public void masukkanEmail(String email) {
+        boxUsername.type(email);
+    }
+
+    public void klikEmailAgain() {boxEmailAgain.click();}
+
+    public void masukkanEmailAgain(String emailagain ) {boxEmailAgain.type(emailagain);}
+
+    public void klikFirstName() {boxFirstName.click();}
+
+    public void masukkanFirstName(String firstname ) {boxFirstName.type(firstname);}
+
+    public void klikSurename() {boxSurname.click();}
+
+    public void masukkanSurename(String surename ) {boxSurname.type(surename);}
+
+    public void klikCityTown() {boxCityTown.click();}
+
+    public void masukkanCityTown(String citytown ) {boxCityTown.type(citytown);}
+
+    public void klikDropdownCountry() {dropdownCountry.click();}
+
+    //klik salah satu dari di dropdown
+
+    public void klikCreate() {tombolCreate.click();}
+
 
 
 }
