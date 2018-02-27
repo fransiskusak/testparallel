@@ -110,6 +110,64 @@ public class DefinitionSteps {
     @Then("Pengguna akan melihat semua matakuliah yang tersedia")
     public void penggunaAkanMelihatSemuaMatakuliah() {endUser.akanLihatSemuaMatakuliah();}
 
+//////////////////////////REGISTER USER//////////////////////////////////
+
+    @When("Pengguna mengeklik tombol register")
+    public void penggunaMengeklikTombolRegister(){}
+
+    @When("Pengguna mengklik textbox Username")
+    public void penggunaMengklikTextboxUsername(){}
+
+    @When("Pengguna memasukkan username 'aa'")
+    public void penggunaMemasukkanUsername(String registerusername){}
+
+    @When("Pengguna mengklik textbox Password")
+    public void penggunaMengklikTextboxPassword
+
+    @When("Pengguna memasukkan password '$password'")
+    public void penggunaMemasukkanPassword(String registerpassword){}
+
+    @When("Pengguna mengeklik textbox Email")
+    public void penggunaMengeklikTextboxEmail(){}
+
+    @When("Pengguna memasukkan Email '$email'")
+    public void penggunaMemasukkanEmail(String email){}
+
+    @When("Pengguna mengeklik textbox Email (again)")
+    public void penggunaMengeklikTextboxEmailAgain(){}
+
+    @When("Pengguna memasukkan Email (again) '$emailagain'")
+    public void penggunaMemasukkanTextboxEmailAgain(String emailagain){}
+
+    @When("Pengguna mengeklik textbox First name")
+    public void penggunaMengeklikTextboxFirstName(){}
+
+    @When("Pengguna memasukkan First name 'Tes tes'")
+    public void
+
+    @When("Pengguna mengeklik textbox Surname")
+    public void
+
+    @When("Pengguna memasukkan Surname 'Tes'")
+    public void
+
+    @When("Pengguna mengeklik textbox City")
+    public void
+
+    @When("Pengguna memasukkan City 'Yogya'")
+    public void
+
+    @When("Pengguna mengeklik textbox Country")
+    public void
+
+    @When("Pengguna mengeklik Negara Indonesia")
+    public void
+
+    !--When Pengguna mengeklik tombol Create
+
+    @Then("Pengguna akan melihat konfirmasi")
+    public void
+
 
 //    @AfterScenario
 //    public void afterScenario() {
