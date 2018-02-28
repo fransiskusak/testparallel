@@ -1,9 +1,7 @@
 package com.mycompany.masterserenityjbehave.steps.serenity;
 
-import com.mycompany.masterserenityjbehave.pages.CourseHomePage;
-import com.mycompany.masterserenityjbehave.pages.DashboardPage;
-import com.mycompany.masterserenityjbehave.pages.HomePage;
-import com.mycompany.masterserenityjbehave.pages.SearchResultPage;
+import com.mycompany.masterserenityjbehave.pages.*;
+import jnr.x86asm.Register;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -14,6 +12,7 @@ public class EndUserSteps extends ScenarioSteps {
     DashboardPage dashboardPage;
     SearchResultPage    searchResultPage;
     CourseHomePage  courseHomePage;
+    RegisterPage    registerPage;
 
 //////////////////////////////LOGIN/////////////////////////////
     @Step
@@ -162,5 +161,61 @@ public class EndUserSteps extends ScenarioSteps {
 
     @Step
     public void akanLihatSemuaMatakuliah() {dashboardPage.lihatSemuaMatakuliah();}
+
+///////////////////////////REGISTER SEBAGAI MAHASISWA/////////////////////
+
+    @Step
+    public void mengeklikTombolRegister(){homePage.klikRegister();}
+
+    @Step
+    public void mengeklikTextboxUsername(){registerPage.klikTombolUsername();}
+
+    @Step
+    public void memasukkanUsername(String registerusername){registerPage.masukkanUsername(registerusername);}
+
+    @Step
+    public void mengeklikTextboxPassword(){registerPage.klikBoxPassword();}
+
+    @Step
+    public void memasukkanPassword(String registerpassword){registerPage.masukkanPassword(registerpassword);}
+
+    @Step
+    public void mengeklikTextboxEmail() {registerPage.klikEmail();}
+
+    @Step
+    public void memasukkanEmail(String email){registerPage.masukkanEmail(email);}
+
+    @Step
+    public void mengeklikTextboxEmailAgain(){registerPage.klikEmailAgain();}
+
+    @Step
+    public void memasukkanEmailAgain(String emailagain) {registerPage.masukkanEmailAgain(emailagain);}
+
+    @Step
+    public void  mengeklikTextboxFirstName(){registerPage.klikFirstName();}
+
+    @Step
+    public void memasukkanFirstName(String firstname) {registerPage.masukkanFirstName(firstname);}
+
+    @Step
+    public void mengeklikTextboxSurname(){registerPage.klikSurename();}
+
+    @Step
+    public void memasukkanSurname(String surename){registerPage.masukkanSurename(surename);}
+
+    @Step
+    public void mengeklikTextboxCity(){registerPage.klikCityTown();}
+
+    @Step
+    public void memasukkanCity(String citytown) {registerPage.klikCityTown();}
+
+    @Step
+    public void mengeklikTextboxCountry(){registerPage.klikDropdownCountry();}
+
+    @Step
+    public void menselectNegaraIndonesia(String Indonesia){registerPage.selectNegara(Indonesia);}
+
+    @Step
+    public void akanMelihatKonfirmasiRegistrasi() {}
 
 }
