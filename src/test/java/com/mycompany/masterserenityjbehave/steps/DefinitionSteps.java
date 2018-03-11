@@ -40,8 +40,16 @@ public class DefinitionSteps {
     @Then("Pengguna akan melihat Nama User yaitu '$nama'")
     public void akanMelihatNamaPengguna(String nama) {endUser.akanLihatNamaPengguna(nama);}
 
-////////////////////////////////////////////////////////////////////////
+////////////////////////LOGIN INVALID PASSWORD////////////////////////////
 
+
+    @When("Pengguna mengetik passwordnya '$invalidpassword'")
+    public void penggunaMengetikInvalidPassword(String invalidpassword) {endUser.mengetikInvalidPassword(invalidpassword);}
+
+    @Then("Pengguna akan melihat pesan eror yaitu '$erorlogin'")
+    public void TidakAkanMelihatNamaPengguna(String erorlogin) {endUser.tidakAkanLihatNamaPengguna(erorlogin);}
+
+////////////////////////////////////////////////////////////////////////
     @When("Pengguna mengeklik textboxt Search Courses")
     public void penggunaKlikBoxSearch(){endUser.mengeklikBoxSearch();}
 
@@ -113,16 +121,16 @@ public class DefinitionSteps {
 //////////////////////////REGISTER USER//////////////////////////////////
 
     @When("Pengguna mengeklik tombol register")
-    public void penggunaMengeklikTombolRegister(){}
+    public void penggunaMengeklikTombolRegister(){endUser.mengeklikTombolRegister();}
 
     @When("Pengguna mengklik textbox Username")
-    public void penggunaMengklikTextboxUsername(){}
+    public void penggunaMengklikTextboxUsername(){endUser.mengeklikTextboxUsername();}
 
     @When("Pengguna memasukkan username 'aa'")
-    public void penggunaMemasukkanUsername(String registerusername){}
+    public void penggunaMemasukkanUsername(String registerusername){endUser.memasukkanUsername(registerusername);}
 
     @When("Pengguna mengklik textbox Password")
-    public void penggunaMengklikTextboxPassword
+    public void penggunaMengklikTextboxPassword(){endUser.mengeklikBoxPassword();}
 
     @When("Pengguna memasukkan password '$password'")
     public void penggunaMemasukkanPassword(String registerpassword){}
@@ -143,30 +151,30 @@ public class DefinitionSteps {
     public void penggunaMengeklikTextboxFirstName(){}
 
     @When("Pengguna memasukkan First name 'Tes tes'")
-    public void
+    public void penggunaMemasukkanFirstName(String firstname){}
 
     @When("Pengguna mengeklik textbox Surname")
-    public void
+    public void penggunaMengeklikTextboxSurname(){}
 
     @When("Pengguna memasukkan Surname 'Tes'")
-    public void
+    public void PenggunaMemasukkanSurname(String surname){}
 
     @When("Pengguna mengeklik textbox City")
-    public void
+    public void penggunaMengeklikTextboxCity(){}
 
     @When("Pengguna memasukkan City 'Yogya'")
-    public void
+    public void penggunaMemasukkanCity(String city){}
 
     @When("Pengguna mengeklik textbox Country")
-    public void
+    public void penggunaMengeklikTextboxCountry(){}
 
     @When("Pengguna mengeklik Negara Indonesia")
-    public void
+    public void penggunaMengeklikNegaraIndonesia(){}
 
-    !--When Pengguna mengeklik tombol Create
+//    When Pengguna mengeklik tombol Create
 
     @Then("Pengguna akan melihat konfirmasi")
-    public void
+    public void penggunaAkanMelihatKonfirmasi(){}
 
 
 //    @AfterScenario

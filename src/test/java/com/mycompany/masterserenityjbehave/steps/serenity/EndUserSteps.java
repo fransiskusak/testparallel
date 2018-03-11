@@ -5,6 +5,7 @@ import jnr.x86asm.Register;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
 
 public class EndUserSteps extends ScenarioSteps {
 
@@ -13,6 +14,7 @@ public class EndUserSteps extends ScenarioSteps {
     SearchResultPage    searchResultPage;
     CourseHomePage  courseHomePage;
     RegisterPage    registerPage;
+    ErrorPage   errorPage;
 
 //////////////////////////////LOGIN/////////////////////////////
     @Step
@@ -47,7 +49,25 @@ public class EndUserSteps extends ScenarioSteps {
 
     @Step
     public void akanLihatNamaPengguna(String nama) {
-        homePage.lihatNama().shouldContainText(nama);
+        homePage.lihatNama().
+                shouldContainText(nama);
+
+    }
+
+/////////////////////////////////LOGIN INVALID PASSWORD//////////////////
+    @Step
+    public void mengetikInvalidPassword(String invalidpassword) {
+        homePage.ketikInvalidPassword(invalidpassword);
+    }
+
+//    @Step
+//    public void tidakAkanLihatNamaPengguna() {
+//        boolean result = dashboardPage.labelCheck();
+//        assertThat(result, equalTo(false));
+//    }
+
+    public void tidakAkanLihatNamaPengguna(String erorlogin) {
+        errorPage.lihatInvalidLogin().shouldContainText(erorlogin);
 
     }
 

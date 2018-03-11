@@ -38,6 +38,10 @@ public class RegisterPage extends PageObject {
     @FindBy(xpath = "html/body/div[3]/div[2]/div/section/div/form/fieldset[3]/div/div[1]/div/input[2]")
     private WebElementFacade boxCancel ;
 
+    @FindBy(xpath= ".//*[@id='id_country']")
+    private WebElementFacade selectCountry;
+
+
 //    @FindBy(xpath = "")
 //    private WebElementFacade boxSurname ;
 //
@@ -81,6 +85,9 @@ public class RegisterPage extends PageObject {
     //klik salah satu dari di dropdown
 
     public void klikCreate() {tombolCreate.click();}
+
+    public void selectNegara(String Indonesia) {selectCountry.selectByVisibleText(Indonesia);}
+
 
 
 

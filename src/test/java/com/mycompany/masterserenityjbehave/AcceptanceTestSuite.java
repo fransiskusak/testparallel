@@ -12,5 +12,6 @@ public class AcceptanceTestSuite extends SerenityStories {
         //storyPaths.add( "stories/login/Enroll.story" );
         storyPaths.add( "stories/Course/Enroll.story" );
         return storyPaths;
+        
     }
 }

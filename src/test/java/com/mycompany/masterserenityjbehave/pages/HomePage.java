@@ -50,6 +50,10 @@ public class HomePage extends PageObject {
         boxPassword.type(password);
     }
 
+    public void ketikInvalidPassword(String invalidpassword) {
+        boxPassword.type(invalidpassword);
+    }
+
     public void klikLogin() {tombolLogin.click();}
 
     public WebElementFacade lihatNama() {
@@ -65,5 +69,4 @@ public class HomePage extends PageObject {
     }
 
     public void klikRegister() {tombolRegister.click();}
-
 }
