@@ -61,12 +61,12 @@ public class EndUserSteps extends ScenarioSteps {
     }
 
 //    @Step
-//    public void tidakAkanLihatNamaPengguna() {
+//    public void akanLihatPesanErrorLogin() {
 //        boolean result = dashboardPage.labelCheck();
 //        assertThat(result, equalTo(false));
 //    }
 
-    public void tidakAkanLihatNamaPengguna(String erorlogin) {
+    public void akanLihatPesanErrorLogin(String erorlogin) {
         errorPage.lihatInvalidLogin().shouldContainText(erorlogin);
 
     }
@@ -192,6 +192,9 @@ public class EndUserSteps extends ScenarioSteps {
 
     @Step
     public void memasukkanUsername(String registerusername){registerPage.masukkanUsername(registerusername);}
+
+    @Step
+    public void mengeklikLockPassword(){registerPage.klikLockPassword();}
 
     @Step
     public void mengeklikTextboxPassword(){registerPage.klikBoxPassword();}

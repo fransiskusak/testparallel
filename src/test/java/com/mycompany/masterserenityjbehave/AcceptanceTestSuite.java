@@ -9,9 +9,14 @@ public class AcceptanceTestSuite extends SerenityStories {
     @Override
     public List<String> storyPaths() {
         List<String> storyPaths = new ArrayList<>();
-        //storyPaths.add( "stories/login/Enroll.story" );
-        storyPaths.add( "stories/Course/Enroll.story" );
+        //storyPaths.add( "stories/Course/MengenrollValid.story" );
+        //storyPaths.add( "stories/Course/CariEnroll.story" );
+        storyPaths.add("stories/Registration/MendaftarElokValid.story");
+        //storyPaths.add( "stories/login/LoginInvalid.story" );
+
+
+
         return storyPaths;
-        
+
     }
 }

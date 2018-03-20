@@ -6,10 +6,11 @@ Saya ingin mendaftar sebagai pengguna e-LOK
 Sehingga saya dapat mengakses matakuliah yang ada di e-LOK
 
 Scenario: Mendaftar akun pengguna di e-LOK
-Given Pengguna berada pada Halaman Dashboard e-LOK
+Given Pengguna berada pada Homepage e-LOK
 When Pengguna mengeklik tombol register
 When Pengguna mengklik textbox Username
 When Pengguna memasukkan username 'aa'
+When Pengguna mengeklik lock password
 When Pengguna mengklik textbox Password
 When Pengguna memasukkan password 'Asdfgh90'
 When Pengguna mengeklik textbox Email
@@ -26,3 +27,6 @@ When Pengguna mengeklik textbox Country
 When Pengguna mengeklik Negara Indonesia
 !--When Pengguna mengeklik tombol Create
 Then Pengguna akan melihat konfirmasi
+
+!--Kerjaan malam tanggal 19 Maret 2019:
+!---buat invalid story utk semua story yg sudah dibuat

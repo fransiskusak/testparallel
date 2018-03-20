@@ -4,8 +4,6 @@ import net.thucydides.core.annotations.Steps;
 import org.jbehave.core.annotations.*;
 
 import com.mycompany.masterserenityjbehave.steps.serenity.EndUserSteps;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DefinitionSteps {
 
@@ -47,7 +45,7 @@ public class DefinitionSteps {
     public void penggunaMengetikInvalidPassword(String invalidpassword) {endUser.mengetikInvalidPassword(invalidpassword);}
 
     @Then("Pengguna akan melihat pesan eror yaitu '$erorlogin'")
-    public void TidakAkanMelihatNamaPengguna(String erorlogin) {endUser.tidakAkanLihatNamaPengguna(erorlogin);}
+    public void akanMelihatErrorLogin(String erorlogin) {endUser.akanLihatPesanErrorLogin(erorlogin);}
 
 ////////////////////////////////////////////////////////////////////////
     @When("Pengguna mengeklik textboxt Search Courses")
@@ -126,50 +124,53 @@ public class DefinitionSteps {
     @When("Pengguna mengklik textbox Username")
     public void penggunaMengklikTextboxUsername(){endUser.mengeklikTextboxUsername();}
 
-    @When("Pengguna memasukkan username 'aa'")
+    @When("Pengguna memasukkan username '$registerusername'")
     public void penggunaMemasukkanUsername(String registerusername){endUser.memasukkanUsername(registerusername);}
 
-    @When("Pengguna mengklik textbox Password")
-    public void penggunaMengklikTextboxPassword(){endUser.mengeklikBoxPassword();}
+    @When("Pengguna mengeklik lock password")
+    public void penggunaMengeklikLockPasword(){endUser.mengeklikLockPassword();}
 
-    @When("Pengguna memasukkan password '$password'")
-    public void penggunaMemasukkanPassword(String registerpassword){}
+    @When("Pengguna mengklik textbox Password")
+    public void penggunaMengklikTextboxPassword(){endUser.mengeklikTextboxPassword();}
+
+    @When("Pengguna memasukkan password '$registerpassword'")
+    public void penggunaMemasukkanPassword(String registerpassword){endUser.memasukkanPassword(registerpassword);}
 
     @When("Pengguna mengeklik textbox Email")
-    public void penggunaMengeklikTextboxEmail(){}
+    public void penggunaMengeklikTextboxEmail(){endUser.mengeklikTextboxEmail();}
 
     @When("Pengguna memasukkan Email '$email'")
-    public void penggunaMemasukkanEmail(String email){}
+    public void penggunaMemasukkanEmail(String email){endUser.memasukkanEmail(email);}
 
     @When("Pengguna mengeklik textbox Email (again)")
-    public void penggunaMengeklikTextboxEmailAgain(){}
+    public void penggunaMengeklikTextboxEmailAgain(){endUser.mengeklikTextboxEmailAgain();}
 
     @When("Pengguna memasukkan Email (again) '$emailagain'")
-    public void penggunaMemasukkanTextboxEmailAgain(String emailagain){}
+    public void penggunaMemasukkanTextboxEmailAgain(String emailagain){endUser.memasukkanEmailAgain(emailagain);}
 
     @When("Pengguna mengeklik textbox First name")
-    public void penggunaMengeklikTextboxFirstName(){}
+    public void penggunaMengeklikTextboxFirstName(){endUser.mengeklikTextboxFirstName();}
 
-    @When("Pengguna memasukkan First name 'Tes tes'")
-    public void penggunaMemasukkanFirstName(String firstname){}
+    @When("Pengguna memasukkan First name '$firstname'")
+    public void penggunaMemasukkanFirstName(String firstname){endUser.memasukkanFirstName(firstname);}
 
     @When("Pengguna mengeklik textbox Surname")
-    public void penggunaMengeklikTextboxSurname(){}
+    public void penggunaMengeklikTextboxSurname(){endUser.mengeklikTextboxSurname();}
 
-    @When("Pengguna memasukkan Surname 'Tes'")
-    public void PenggunaMemasukkanSurname(String surname){}
+    @When("Pengguna memasukkan Surname '$surname'")
+    public void PenggunaMemasukkanSurname(String surname){endUser.memasukkanSurname(surname);}
 
     @When("Pengguna mengeklik textbox City")
-    public void penggunaMengeklikTextboxCity(){}
+    public void penggunaMengeklikTextboxCity(){endUser.mengeklikTextboxCity();}
 
-    @When("Pengguna memasukkan City 'Yogya'")
-    public void penggunaMemasukkanCity(String city){}
+    @When("Pengguna memasukkan City '$city'")
+    public void penggunaMemasukkanCity(String city){endUser.memasukkanCity(city);}
 
     @When("Pengguna mengeklik textbox Country")
-    public void penggunaMengeklikTextboxCountry(){}
+    public void penggunaMengeklikTextboxCountry(){endUser.mengeklikTextboxCountry();}
 
     @When("Pengguna mengeklik Negara Indonesia")
-    public void penggunaMengeklikNegaraIndonesia(){}
+    public void penggunaMengeklikNegaraIndonesia(String Indonesia ){endUser.menselectNegaraIndonesia(Indonesia);}
 
 //    When Pengguna mengeklik tombol Create
 

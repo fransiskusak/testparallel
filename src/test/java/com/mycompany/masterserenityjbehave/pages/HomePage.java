@@ -34,7 +34,7 @@ public class HomePage extends PageObject {
     @FindBy(className = "main-heading")
     private WebElementFacade textDiHomepage;
 
-    @FindBy(xpath = "html/body/div[1]/div[2]/header[2]/nav/div/div/ul[1]/li[1]/a")
+    @FindBy(xpath = "html/body/div[1]/div[2]/header[1]/div/div/div[2]/div/form/div[2]/a[2]")
     private WebElementFacade tombolRegister;
 
 ///////////////////////////////////////////////////////////////////////////

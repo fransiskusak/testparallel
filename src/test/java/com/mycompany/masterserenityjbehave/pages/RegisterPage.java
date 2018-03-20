@@ -12,6 +12,9 @@ public class RegisterPage extends PageObject {
     private WebElementFacade boxUsername;
 
     @FindBy(xpath = "html/body/div[3]/div[2]/div/section/div/form/fieldset[1]/div/div[3]/div[2]/div/a[1]/span/span/em")
+    private WebElementFacade lockPassword;
+
+    @FindBy(xpath = "html/body/div[3]/div[2]/div/section/div/form/fieldset[1]/div/div[3]/div[2]/div/span/input")
     private WebElementFacade boxPassword;
 
     @FindBy(xpath = "html/body/div[3]/div[2]/div/section/div/form/fieldset[2]/div/div[1]/div[2]/input")
@@ -54,14 +57,15 @@ public class RegisterPage extends PageObject {
 
     public void masukkanUsername(String username ) {boxUsername.type(username);}
 
+    public void klikLockPassword() {lockPassword.click();}
+
     public void klikBoxPassword() {boxPassword.click();}
 
     public void masukkanPassword(String password ) {boxPassword.type(password);}
 
     public void klikEmail() {boxEmail.click();}
 
-    public void masukkanEmail(String email) {
-        boxUsername.type(email);
+    public void masukkanEmail(String email) {boxEmail.type(email);
     }
 
     public void klikEmailAgain() {boxEmailAgain.click();}

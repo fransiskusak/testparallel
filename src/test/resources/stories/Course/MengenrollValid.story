@@ -6,7 +6,7 @@ Saya ingin enroll pada matakuliah Big Data di e-LOK
 
 Scenario: Enroll sebuah matakuliah di e-LOK
 GivenStories: stories/login/Login.story
-GivenStories: stories/login/CariCourse.story
+GivenStories: stories/Course/CariCourse.story
 Given Pengguna berada pada Halaman Dashboard e-LOK
 When Pengguna mengeklik textboxt Search Courses
 When Pengguna mengetik 'Big Data Komputasional'
