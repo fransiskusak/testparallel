@@ -7,7 +7,7 @@ import net.serenitybdd.core.pages.WebElementFacade;
 /**
  * Created by Fransiskus A K on 09/03/2018.
  */
-public class ErrorPage extends PageObject {
+public class ErrorLoginPage extends PageObject {
     @FindBy(className = "error")
     private WebElementFacade textInvalidLogin;
 

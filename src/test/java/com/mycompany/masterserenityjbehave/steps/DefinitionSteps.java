@@ -177,6 +177,65 @@ public class DefinitionSteps {
     @Then("Pengguna akan melihat konfirmasi")
     public void penggunaAkanMelihatKonfirmasi(){}
 
+//////////////////////////REGISTER USER//////////////////////////////////
+
+    @When("Pengguna mengeklik tombol Edit profile")
+    public void penggunaMengeklikEditProfile(){endUser.mengeklikTombolEditProfile();}
+
+    @When("Pengguna mengeklik field First name")
+    public void penggunaMengeklikFieldFirstName(){endUser.mengeklikFieldFirstNameEdit();}
+
+    @When("Pengguna memasukkan '$firstnameedit' ke field First name")
+    public void penggunaMemasukkanFieldFirstName(String firstnameedit ){endUser.memasukkanFirstNameEdit(firstnameedit);}
+
+    @When("Pengguna mengeklik field Surname")
+    public void penggunaMengeklikFieldSurname(){endUser.mengeklikFieldSurnameEdit();}
+
+    @When("Pengguna memasukkan '$surnameedit' ke field Surname")
+    public void penggunaMemasukkanFieldSurname(String surnameedit){endUser.memasukkanFieldSurnameEdit(surnameedit);}
+
+    @When("Pengguna mengeklik field Email address")
+    public void penggunaMengeklikFieldEmailAddress(){endUser.mengeklikFieldEmailEdit();}
+
+    @When("Pengguna memasukkan '$emailedit' ke field Email address")
+    public void penggunaMemasukkanFieldEmailAddress(String emailedit){endUser.memasukkanFieldEmailEdit(emailedit);}
+
+    @When("Pengguna mengeklik field Email display")
+    public void penggunaMengeklikFieldEmailDisplay(){endUser.mengeklikFieldEmailDisplay();}
+
+    @When("Pengguna mengeklik pilihan Allow everyone to see my email address")
+    public void penggunaMengeklikPilihanAllowEveryone(){endUser.memilihFieldEmailDisplay();}
+
+    @When("Pengguna mengeklik field City/Town")
+    public void penggunaMengeklikFieldCity(){endUser.mengeklikFieldCityEdit();}
+
+    @When("Pengguna memasukkan '$citytownedit' ke field City/Town")
+    public void penggunaMemasukkanFieldCity(String citytownedit){endUser.memasukkanFieldCityEdit(citytownedit);}
+
+    @When("Pengguna mengeklik field Country")
+    public void penggunaMengeklikFieldCountry(){endUser.mengeklikFieldCountryEdit();}
+
+    @When("Pengguna mengeklik pilihan Indonesia")
+    public void penggunaMengeklikPilihanIndonesia(){endUser.memilihIsiFieldCountryEdit();}
+
+    @When("Pengguna mengeklik field Timezone")
+    public void penggunaMengeklikFieldTimezone(){endUser.mengeklikFieldTimezoneEdit();}
+
+    @When("Pengguna mengeklik pilihan Server timezone (Asia/Jakarta)")
+    public void penggunaMengeklikPilihanTimezone(){endUser.memilihIsiTimezoneJakarta();}
+
+    @When("Pengguna mengeklik field Description")
+    public void penggunaMengeklikFieldDescription(){endUser.mengelikFieldDescriptionEdit();}
+
+    @When("Pengguna memasukkan '$descedit' ke field Description")
+    public void penggunaMemasukkanFieldDescription(String descedit){endUser.memasukkanFieldDescriptionEdit(descedit);}
+
+    @When("Pengguna mengeklik tombol update profil")
+    public void penggunaMengeklikTombolUpdateProfil(){endUser.mengeklikTombolUpdateProfil();}
+
+    @Then("Pengguna melihat nama akunnya menjadi '$namaakunteredit'")
+    public void penggunaAkanMelihatNamaAkunnyaBerubah(String namaakunteredit ){endUser.akanLihatNamaBaruPengguna(namaakunteredit);}
+
 
 //    @AfterScenario
 //    public void afterScenario() {

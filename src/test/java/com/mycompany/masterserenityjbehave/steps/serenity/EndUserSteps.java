@@ -1,20 +1,19 @@
 package com.mycompany.masterserenityjbehave.steps.serenity;
 
 import com.mycompany.masterserenityjbehave.pages.*;
-import jnr.x86asm.Register;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
 
 public class EndUserSteps extends ScenarioSteps {
 
     HomePage homePage;
     DashboardPage dashboardPage;
-    SearchResultPage    searchResultPage;
+    SearchResultPage searchResultPage;
     CourseHomePage  courseHomePage;
     RegisterPage    registerPage;
-    ErrorPage   errorPage;
+    ErrorLoginPage errorLoginPage;
+    ProfilePage profilePage;
 
 //////////////////////////////LOGIN/////////////////////////////
     @Step
@@ -67,7 +66,7 @@ public class EndUserSteps extends ScenarioSteps {
 //    }
 
     public void akanLihatPesanErrorLogin(String erorlogin) {
-        errorPage.lihatInvalidLogin().shouldContainText(erorlogin);
+        errorLoginPage.lihatInvalidLogin().shouldContainText(erorlogin);
 
     }
 
@@ -240,5 +239,67 @@ public class EndUserSteps extends ScenarioSteps {
 
     @Step
     public void akanMelihatKonfirmasiRegistrasi() {}
+
+///////////////////////////MENGEDIT PROFIL/////////////////////
+
+    @Step
+    public void mengeklikTombolEditProfile(){profilePage.klikTombolEditProfile();}
+
+    @Step
+    public void mengeklikFieldFirstNameEdit() {profilePage.klikBoxFirstNameEdit();}
+
+    @Step
+    public void memasukkanFirstNameEdit(String firstnameedit){profilePage.masukkanBoxFirstName(firstnameedit);}
+
+    @Step
+    public void mengeklikFieldSurnameEdit(){profilePage.klikBoxSurnameEdit();}
+
+    @Step
+    public void memasukkanFieldSurnameEdit(String surnameedit){profilePage.masukkanBoxSurname(surnameedit);}
+
+    @Step
+    public void mengeklikFieldEmailEdit(){profilePage.klikBoxEmailAddressEdit();}
+
+    @Step
+    public void memasukkanFieldEmailEdit(String emailedit){profilePage.masukkanEmailAddress(emailedit);}
+
+    @Step
+    public void mengeklikFieldEmailDisplay(){profilePage.klikBoxEmailDisplayEdit();}
+
+    @Step
+    public void memilihFieldEmailDisplay(){profilePage.klikIsiSelectboxEmailDisplayEdit();}
+
+    @Step
+    public void mengeklikFieldCityEdit(){profilePage.klikBoxCityEdit();}
+
+    @Step
+    public void memasukkanFieldCityEdit(String cityedit){profilePage.masukkanCity(cityedit);}
+
+    @Step
+    public void mengeklikFieldCountryEdit(){profilePage.klikBoxCountryEdit();}
+
+    @Step
+    public void memilihIsiFieldCountryEdit(){profilePage.klikSelectIsiBoxCountry();}
+
+    @Step
+    public void mengeklikFieldTimezoneEdit(){profilePage.klikBoxTimezoneEdit();}
+
+    @Step
+    public void memilihIsiTimezoneJakarta(){profilePage.klikSelectIsiBoxTimezone();}
+
+    @Step
+    public void mengelikFieldDescriptionEdit(){profilePage.klikBoxDescriptionEdit();}
+
+    @Step
+    public void memasukkanFieldDescriptionEdit(String descriptionedit){profilePage.masukkanDescription(descriptionedit);}
+
+    @Step
+    public void mengeklikTombolUpdateProfil(){profilePage.klikTombolUpdateProfil();}
+
+    @Step
+    public void akanLihatNamaBaruPengguna(String namaakunteredit) {
+        homePage.lihatNama().shouldContainText(namaakunteredit);
+
+    }
 
 }
