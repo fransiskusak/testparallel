@@ -44,6 +44,11 @@ public class RegisterPage extends PageObject {
     @FindBy(xpath= ".//*[@id='id_country']")
     private WebElementFacade selectCountry;
 
+    @FindBy(xpath = "html/body/div[1]/div[2]/div/div[2]/section/div/div[2]/form/div/input"
+            //id = "notice"
+            )
+    private WebElementFacade konfirmasiBerhasil;
+
 
 //    @FindBy(xpath = "")
 //    private WebElementFacade boxSurname ;
@@ -88,11 +93,11 @@ public class RegisterPage extends PageObject {
 
     //klik salah satu dari di dropdown
 
-    public void klikCreate() {tombolCreate.click();}
-
     public void selectNegara(String Indonesia) {selectCountry.selectByVisibleText(Indonesia);}
 
+    public void klikCreate() {tombolCreate.click();}
 
+    public WebElementFacade akanLihatKonfirmasi() {return konfirmasiBerhasil;}
 
 
 }

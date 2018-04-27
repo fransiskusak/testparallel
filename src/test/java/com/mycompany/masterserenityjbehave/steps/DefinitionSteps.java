@@ -47,33 +47,50 @@ public class DefinitionSteps {
     @Then("Pengguna akan melihat pesan eror yaitu '$erorlogin'")
     public void akanMelihatErrorLogin(String erorlogin) {endUser.akanLihatPesanErrorLogin(erorlogin);}
 
-////////////////////////////////////////////////////////////////////////
+////////////////////////////////SEARCH MAKUL BERDASAR KEYWORD////////////////////////////////////////
     @When("Pengguna mengeklik textboxt Search Courses")
     public void penggunaKlikBoxSearch(){endUser.mengeklikBoxSearch();}
 
-    @When("Pengguna mengetik '$Big Data Komputasional'")
+    @When("Pengguna mengetik '$keyword'")
     public void penggunaKetikBigData(String keyword) {endUser.mengetikKeywordCourse(keyword);}
 
     @When("Pengguna mengeklik tombol cari")
     public void penggunaKlikCari(){endUser.mengeklikCariCourse();}
 
-    @Then("Pengguna akan melihat Nama Matakuliah Big Data Komputasional")
-    public void penggunaMelihatNamaMatakuliahBigData(){endUser.menemukanBigData();}
+    @Then("Pengguna akan melihat Nama Matakuliah yaitu '$judulMakul'")
+    public void penggunaMelihatNamaMatakuliahNya(String judulMakul){endUser.menemukanTulisanNamaMakulnya(judulMakul);}
 
 
-///////////////////////////////////////////////////////////////////////////
+///////////////////////////ENROLL OPEN MOOC////////////////////////////////////////////////
 
     @When("Pengguna mengeklik judul Big Data Komputasional")
-    public void penggunaMengeklikBigData(){endUser.mengeklikTulisanBigData();}
+    public void penggunaMengeklikBigData(){endUser.mengeklikTulisanNamaMakul();}
 
-    @When("pengguna klik enroll me")
+    @When("Pengguna klik tombol enroll me")
     public void penggunaMengeklikEnroll(){endUser.mengeklikEnroll();}
 
-    @Then("Terdapat menu unenroll")
-    public void penggunaMelihatTombolEnroll(){endUser.akanLihatTulisanUnenroll();}
+    @Then("Terdapat menu '$tlsunenroll'")
+    public void penggunaMelihatTombolEnroll(String tlsunenroll){endUser.akanLihatTulisanUnenroll(tlsunenroll);}
 
 
-/////////////////////////////////////////////////////////////////////////
+//////////////////////////////ENROLL ENROLLMENT KEY/////////////////////////////////
+
+    @When("Pengguna mengeklik judul matakuliah Jaringan Komputer")
+    public void penggunaMengeklikJaringanKomputer(){endUser.mengeklikTulisanJarKom();}
+
+    @When("Pengguna mengeklik textbox untuk memasukkan enrollment key")
+    public void penggunaMengeklikTextboxEnrollmentkey(){endUser.mengeklikTextboxEnrollmentKey();}
+
+    @When("Pengguna mengetik enrollment key '$key'")
+    public void penggunaMengetikEnrollmentKey(String key) {endUser.mengetikEnrollmentKey(key);}
+
+    @When("Pengguna mengeklik tombol enroll me")
+    public void penggunaMengeklikTombolEnrollMeJarkom(){endUser.mengeklikTombolEnrollMe();}
+
+
+// ///////////////////////////////////////////////////////////////////////
+
+
 
     @When("Pengguna mengeklik nama")
     public void penggunaKlikNama(){endUser.mengeklikNama();}
@@ -81,8 +98,8 @@ public class DefinitionSteps {
     @When("Pengguna mengeklik Logout")
     public void penggunaKlikLogout(){endUser.mengeklikLogout();}
 
-    @Then("Pengguna akan melihat Tulisan")
-    public void penggunaLihatTulisanDiHomepage(){endUser.akanLihatTulisan();}
+    @Then("Pengguna akan melihat deskripsi '$isiTentangElok'")
+    public void penggunaLihatTulisanDiHomepage(String isiTentangElok){endUser.akanLihatTulisan(isiTentangElok);}
 
 
 /////////////////////////////////////////////////////////////////////////
@@ -90,8 +107,8 @@ public class DefinitionSteps {
     @When("Pengguna mengeklik tombol profil")
     public void penggunaKlikProfil(){endUser.mengeklikTombolProfil();}
 
-    @Then("Pengguna akan melihat profil akunnya")
-    public void penggunaAkanMelihatProfilnya() {endUser.akanLihatProfilnya();}
+    @Then("Pengguna akan melihat deskripsi '$deskripsiProfil' di halaman profil")
+    public void penggunaAkanMelihatProfilnya(String deskripsiProfil) {endUser.akanLihatProfilnya(deskripsiProfil);}
 
 
     @When("Pengguna mengeklik tombol grade")
@@ -105,8 +122,8 @@ public class DefinitionSteps {
     @When("Pengguna mengeklik tombol messages")
     public void penggunaMengeklikTombolMessages() {endUser.mengeklikMessages();}
 
-    @Then("Pengguna akan melihat messages-nya")
-    public void penggunaAkanMelihatMessagesnya() {endUser.akanLihatMessages();}
+    @Then("Pengguna akan melihat messages-nya '$isimessages'")
+    public void penggunaAkanMelihatMessagesnya(String isimessages) {endUser.akanLihatMessages(isimessages);}
 
 /////////////////////////////////////////////////////////////////////////
 
@@ -169,13 +186,14 @@ public class DefinitionSteps {
     @When("Pengguna mengeklik textbox Country")
     public void penggunaMengeklikTextboxCountry(){endUser.mengeklikTextboxCountry();}
 
-    @When("Pengguna mengeklik Negara Indonesia")
-    public void penggunaMengeklikNegaraIndonesia(String Indonesia ){endUser.menselectNegaraIndonesia(Indonesia);}
+    @When("Pengguna mengeklik tombol Create")
+    public void penggunaMengeklikCreate() {endUser.mengeklikCreate();}
 
-//    When Pengguna mengeklik tombol Create
+    @When("Pengguna mengeklik Negara '$negara'")
+    public void penggunaMengeklikNegaraIndonesia(String negara ){endUser.menselectNegaraIndonesia(negara);}
 
-    @Then("Pengguna akan melihat konfirmasi")
-    public void penggunaAkanMelihatKonfirmasi(){}
+    @Then("Pengguna akan melihat konfirmasi '$berhasil'")
+    public void penggunaAkanMelihatKonfirmasi(String berhasil){endUser.akanMelihatKonfirmasiRegistrasi(berhasil);}
 
 //////////////////////////REGISTER USER//////////////////////////////////
 
@@ -237,6 +255,15 @@ public class DefinitionSteps {
     public void penggunaAkanMelihatNamaAkunnyaBerubah(String namaakunteredit ){endUser.akanLihatNamaBaruPengguna(namaakunteredit);}
 
 
+
+    @When("Pengguna mengeklik tombol unenroll")
+    public void penggunaMengeklikUnenroll() {endUser.mengeklikUnenroll();}
+
+    @When("Pengguna mengeklik continue")
+    public void penggunaMengeklikContnue(){endUser.mengeklikContinue();}
+
+    @Then("Pengguna tidak menemukan List Matakuliah bernama '$listbigdata'")
+    public void penggunaTidakMenemukanListMatakuliah(String listbigdata){endUser.tidakMenemukanListMatakuliah(listbigdata);}
 //    @AfterScenario
 //    public void afterScenario() {
 //        driver.quit();

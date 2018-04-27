@@ -48,10 +48,7 @@ public class EndUserSteps extends ScenarioSteps {
 
     @Step
     public void akanLihatNamaPengguna(String nama) {
-        homePage.lihatNama().
-                shouldContainText(nama);
-
-    }
+        homePage.lihatNama().shouldContainText(nama);}
 
 /////////////////////////////////LOGIN INVALID PASSWORD//////////////////
     @Step
@@ -71,7 +68,7 @@ public class EndUserSteps extends ScenarioSteps {
     }
 
 
-/////////////////////////////////CARI COURSE/////////////////////////////
+/////////////////////////////////CARI COURSE VALID/////////////////////////////
     @Step
     public void beradaDiDashboardpage() {
         dashboardPage.open();
@@ -93,13 +90,15 @@ public class EndUserSteps extends ScenarioSteps {
     }
 
     @Step
-    public void menemukanBigData() {
+    public void menemukanTulisanNamaMakulnya(String namaMakulnya) { searchResultPage.lihatHasilSearchCourse().shouldContainText(namaMakulnya);}
+
+
         //String bodyText = getDriver().findElement(By.tagName("body")).getText();
         //Assert.assertTrue("Text not found!", bodyText.contains("Big Data"));
 //dikomen 30 Nov di IF
         //String result = dashboardPage.temukanKeyword();
         //assertThat("course is not found", result , "Big Data");
-    }
+
 
 
 
@@ -111,21 +110,35 @@ public class EndUserSteps extends ScenarioSteps {
     public void mengeklikLogout() {homePage.klikLogout();}
 
     @Step
-    public void akanLihatTulisan() {homePage.lihatTulisan();}
+    public void akanLihatTulisan(String isiTentangElok) {homePage.lihatTulisan().shouldContainText(isiTentangElok);}
 
 
 
 
 //////////////////////////////////ENROLE COURSE/////////////////////
     @Step
-    public void mengeklikTulisanBigData() {searchResultPage.klikTulisanBigData();}
+    public void mengeklikTulisanNamaMakul() {searchResultPage.klikTulisanNamaMakul();}
 
     @Step
-    public void mengeklikEnroll(){courseHomePage.enroll();}
+    public void mengeklikEnroll(){courseHomePage.enrollBigData();}
 
     @Step
-    public void  akanLihatTulisanUnenroll() {courseHomePage.temukanUnenroll();}
+    public void  akanLihatTulisanUnenroll(String tlsunenroll) {courseHomePage.temukanUnenroll().shouldContainText(tlsunenroll);}
 
+
+///////////////////////////////////ENROLLMENT KEY/////////////////////////
+
+    @Step
+    public void mengeklikTulisanJarKom() {searchResultPage.klikTulisanNamaMakulJarkom();}
+
+    @Step
+    public void mengeklikTextboxEnrollmentKey(){courseHomePage.klikTextboxEnrollKey();}
+
+    @Step
+    public void mengetikEnrollmentKey(String key){courseHomePage.ketikEnrollmentKey(key);}
+
+    @Step
+    public void mengeklikTombolEnrollMe(){courseHomePage.klikEnrollMeJarkom();}
 
 
 ////////////////////////////////MELIHAT PROFIL///////////////////////////
@@ -142,7 +155,7 @@ public class EndUserSteps extends ScenarioSteps {
     public void mengeklikTombolProfil() {dashboardPage.klikTombolProfil();}
 
     @Step
-    public void akanLihatProfilnya() {dashboardPage.lihatProfil();}
+    public void akanLihatProfilnya(String deskripsiProfil) {dashboardPage.lihatProfil().shouldContainText(deskripsiProfil);}
 
 
 
@@ -171,7 +184,8 @@ public class EndUserSteps extends ScenarioSteps {
     public void mengeklikMessages(){dashboardPage.klikTombolMessages();}
 
     @Step
-    public void akanLihatMessages() {dashboardPage.lihatMessages();}
+    public void akanLihatMessages(String isimessages) {
+        dashboardPage.lihatMessages().shouldContainText(isimessages);}
 
 //////////////////////////MELIHAT SEMUA MATAKULIAH///////////////////////
 
@@ -235,10 +249,13 @@ public class EndUserSteps extends ScenarioSteps {
     public void mengeklikTextboxCountry(){registerPage.klikDropdownCountry();}
 
     @Step
-    public void menselectNegaraIndonesia(String Indonesia){registerPage.selectNegara(Indonesia);}
+    public void mengeklikCreate(){registerPage.klikCreate();}
 
     @Step
-    public void akanMelihatKonfirmasiRegistrasi() {}
+    public void menselectNegaraIndonesia(String negara){registerPage.selectNegara(negara);}
+
+    @Step
+    public void akanMelihatKonfirmasiRegistrasi(String berhasil) {registerPage.akanLihatKonfirmasi().shouldContainText(berhasil);}
 
 ///////////////////////////MENGEDIT PROFIL/////////////////////
 
@@ -299,7 +316,18 @@ public class EndUserSteps extends ScenarioSteps {
     @Step
     public void akanLihatNamaBaruPengguna(String namaakunteredit) {
         homePage.lihatNama().shouldContainText(namaakunteredit);
-
     }
 
+    ////////////////////UNENROLL////////////////////////////////////////
+
+    @Step
+    public void mengeklikUnenroll(){courseHomePage.unenroll();}
+
+    @Step
+    public void mengeklikContinue() {courseHomePage.klikContinue();}
+
+    @Step
+    public void tidakMenemukanListMatakuliah(String listbigdata) {
+        //courseHomePage.tidakMenemukanListMatakuliah().shouldNotContainText(listbigdata);
+        }
 }

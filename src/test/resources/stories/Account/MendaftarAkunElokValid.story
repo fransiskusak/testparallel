@@ -1,10 +1,3 @@
-Meta:
-
-Narrative:
-Sebagai seorang mahasiswa
-Saya ingin mendaftar sebagai pengguna e-LOK
-Sehingga saya dapat mengakses matakuliah yang ada di e-LOK
-
 Scenario: Mendaftar akun pengguna di e-LOK
 Given Pengguna berada pada Homepage e-LOK
 When Pengguna mengeklik tombol register
@@ -24,9 +17,6 @@ When Pengguna memasukkan Surname 'Tes'
 When Pengguna mengeklik textbox City
 When Pengguna memasukkan City 'Yogya'
 When Pengguna mengeklik textbox Country
-When Pengguna mengeklik Negara Indonesia
-!--When Pengguna mengeklik tombol Create
-Then Pengguna akan melihat konfirmasi
-
-!--Kerjaan malam tanggal 19 Maret 2019:
-!---buat invalid story utk semua story yg sudah dibuat
+When Pengguna mengeklik Negara 'Indonesia'
+When Pengguna mengeklik tombol Create
+Then Pengguna akan melihat konfirmasi 'Continue'

@@ -56,9 +56,7 @@ public class HomePage extends PageObject {
 
     public void klikLogin() {tombolLogin.click();}
 
-    public WebElementFacade lihatNama() {
-        return textNamauser;
-    }
+    public WebElementFacade lihatNama() { return textNamauser;}
 
     public void klikNama() {textNamauser.click();}
 

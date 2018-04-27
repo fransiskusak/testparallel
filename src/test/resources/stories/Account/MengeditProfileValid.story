@@ -5,7 +5,7 @@ Sebagai seorang mahasiswa
 Saya ingin memperbaharui informasi profil akun saya di eLOK
 Sehingga informasi yang tercanmtum di halaman profil saya lebih update
 
-GivenStories: stories/login/Login.story
+GivenStories: stories/Account/Login.story
 Scenario: Mengedit halaman profile akun eLOK
 Given Pengguna berada pada Halaman Dashboard e-LOK
 When Pengguna mengeklik nama

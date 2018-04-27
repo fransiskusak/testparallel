@@ -12,12 +12,46 @@ public class CourseHomePage extends PageObject {
     @FindBy(xpath = "html/body/div[1]/div[2]/div/div[2]/div/div/section/div/div[2]/form/fieldset[2]/div/div/div/input")
     private WebElementFacade tblEnroll;
 
+    //Unenroll
+
     @FindBy(xpath = "html/body/div[1]/div[2]/div/div[2]/aside/div[2]/div[2]/div/ul/li/ul/li/p/a")
     private WebElementFacade tblUnenroll;
 
+    @FindBy(xpath = "html/body/div[1]/div[2]/div/div[2]/section/div/div/div/div[3]/div/div[1]/form/div/input[1]")
+    private WebElementFacade tblContinue;
 
-    public void enroll(){tblEnroll.click();}
+    @FindBy(className = "html/body/div[1]/div[2]/div/div[2]/div/div/section/div/aside/div[2]/div[2]")
+    private WebElementFacade listMatakuliahBigData;
 
-    public void temukanUnenroll(){}
+/////////////////////////ENROLLMENT KEY////////////////////////////////////////
+
+    @FindBy(xpath = "html/body/div[1]/div[2]/div/div[2]/div/div/section/div/div[2]/form/fieldset[1]/div/div/div[2]/div/a[1]/span/span/em")
+    private WebElementFacade textboxLockEnrollmentKey;
+
+    @FindBy(xpath = "html/body/div[1]/div[2]/div/div[2]/div/div/section/div/div[2]/form/fieldset[1]/div/div/div[2]/div/span/input")
+    private WebElementFacade textboxEnrollmentKey;
+
+    @FindBy(xpath = "html/body/div[1]/div[2]/div/div[2]/div/div/section/div/div[2]/form/fieldset[2]/div/div/div/input")
+    private WebElementFacade tombolEnrollJarkom;
+
+    public void klikTextboxEnrollKey(){
+        textboxLockEnrollmentKey.click();}
+
+    public void ketikEnrollmentKey(String key){
+        textboxEnrollmentKey.type(key);}
+
+    public void klikEnrollMeJarkom(){tombolEnrollJarkom.click();}
+
+/////////////////////////////////////////////////////////////////////////////////
+
+    public void enrollBigData(){tblEnroll.click();}
+
+    public WebElementFacade temukanUnenroll(){ return tblUnenroll;}
+
+    public void unenroll(){tblUnenroll.click();}
+
+    public void klikContinue(){tblContinue.click();}
+
+    public WebElementFacade tidakMenemukanListMatakuliah() {return listMatakuliahBigData ;}
 
 }
