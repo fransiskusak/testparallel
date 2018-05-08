@@ -1,11 +1,10 @@
-!--Meta:
-
 Narrative:
 Sebagai seorang mahasiswa
 Saya ingin enroll pada matakuliah Big Data di e-LOK
+Untuk dapat mengakses konten pembelajaran Big Data
 
-Scenario: Enroll sebuah matakuliah di e-LOK
-GivenStories: stories/Account/Login.story
+Scenario: Enroll sebuah matakuliah di e-LOK tanpa enrollment key
+GivenStories: stories/Account/Positive/Login.story
 GivenStories: stories/Course/MancariCourseValid.story
 Given Pengguna berada pada Halaman Dashboard e-LOK
 When Pengguna mengeklik textboxt Search Courses

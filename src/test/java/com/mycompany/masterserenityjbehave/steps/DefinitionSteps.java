@@ -4,6 +4,7 @@ import net.thucydides.core.annotations.Steps;
 import org.jbehave.core.annotations.*;
 
 import com.mycompany.masterserenityjbehave.steps.serenity.EndUserSteps;
+import org.yecht.Data;
 
 public class DefinitionSteps {
 
@@ -88,6 +89,12 @@ public class DefinitionSteps {
     public void penggunaMengeklikTombolEnrollMeJarkom(){endUser.mengeklikTombolEnrollMe();}
 
 
+    //////////////////////INVALID ENROLL///////////////////////////////
+
+    @Then("Terdapat pesan eror '$erorenroll'")
+    public void terdapatPesanErorIncorrect(String erorenroll){endUser.melihatErorEnroll(erorenroll);}
+
+
 // ///////////////////////////////////////////////////////////////////////
 
 
@@ -130,8 +137,11 @@ public class DefinitionSteps {
     @When("Pengguna mengeklik tombol Matakuliah")
     public void penggunaMengeklikTombolMatakuliah() {endUser.mengeklikMatakuliah();}
 
-    @Then("Pengguna akan melihat semua matakuliah yang tersedia")
-    public void penggunaAkanMelihatSemuaMatakuliah() {endUser.akanLihatSemuaMatakuliah();}
+    @When("Pengguna mengeklik tombol MOOC")
+    public void penggunaMengeklikTombolMOOC(){endUser.mengeklikMOOC();}
+
+    @Then("Pengguna akan melihat salah satu Matakuliah yang tersedia yaitu '$sampleJarkom'")
+    public void penggunaAkanMelihatSampleMatakuliah(String sampleJarkom) {endUser.akanLihatSampleMatakuliah(sampleJarkom);}
 
 //////////////////////////REGISTER USER//////////////////////////////////
 
@@ -186,16 +196,24 @@ public class DefinitionSteps {
     @When("Pengguna mengeklik textbox Country")
     public void penggunaMengeklikTextboxCountry(){endUser.mengeklikTextboxCountry();}
 
-    @When("Pengguna mengeklik tombol Create")
-    public void penggunaMengeklikCreate() {endUser.mengeklikCreate();}
-
     @When("Pengguna mengeklik Negara '$negara'")
     public void penggunaMengeklikNegaraIndonesia(String negara ){endUser.menselectNegaraIndonesia(negara);}
+
+    @When("Pengguna mengeklik tombol create")
+    public void penggunaMengeklikCreate() {endUser.mengeklikCreateAccount();}
 
     @Then("Pengguna akan melihat konfirmasi '$berhasil'")
     public void penggunaAkanMelihatKonfirmasi(String berhasil){endUser.akanMelihatKonfirmasiRegistrasi(berhasil);}
 
-//////////////////////////REGISTER USER//////////////////////////////////
+
+
+    //////////////////////////////////////INVALID REGISTER USER///////////////////////////////////////////////////
+
+
+    @Then("Pengguna melihat error message '$eror'")
+    public void penggunaMelihatEror(String eror){endUser.akanLihatEror(eror);}
+
+    //////////////////////////EDIT PROFIL//////////////////////////////////
 
     @When("Pengguna mengeklik tombol Edit profile")
     public void penggunaMengeklikEditProfile(){endUser.mengeklikTombolEditProfile();}
@@ -254,8 +272,12 @@ public class DefinitionSteps {
     @Then("Pengguna melihat nama akunnya menjadi '$namaakunteredit'")
     public void penggunaAkanMelihatNamaAkunnyaBerubah(String namaakunteredit ){endUser.akanLihatNamaBaruPengguna(namaakunteredit);}
 
+    @Then("Pengguna melihat pesan eror '$This email address is already registered.'")
+    public void penggunaAkanMelihatErorEditEmail(String eroreditemail) {endUser.akanLihatErorEditEmail(eroreditemail);}
 
 
+
+//////////////////////////////////UNENROLL///////////////////////////////////////////////////////////////////////////////////
     @When("Pengguna mengeklik tombol unenroll")
     public void penggunaMengeklikUnenroll() {endUser.mengeklikUnenroll();}
 
@@ -264,6 +286,95 @@ public class DefinitionSteps {
 
     @Then("Pengguna tidak menemukan List Matakuliah bernama '$listbigdata'")
     public void penggunaTidakMenemukanListMatakuliah(String listbigdata){endUser.tidakMenemukanListMatakuliah(listbigdata);}
+
+
+/////////////////////////////////MENGAKSES TUGAS/////////////////////////////////////////////////////////////////
+    @Given("Pengguna berada di Halaman Course Jaringan Komputer")
+    public void penggunaBeradaDiHalamanCourse(){endUser.beradadiHomePageCourse();}
+
+    @When("Pengguna mengeklik tombol Tugas Awal")
+    public void penggunaMengeklikTugasAwal(){endUser.mengeklikTugasAwal();}
+
+    @When("Pengguna mengeklik tombol Add Submission")
+    public void penggunaMengeklikAddSubmission(){endUser.mengeklikAddSubmission();}
+
+    @When("Pengguna mengeklik tombol Add")
+    public void penggunaMengeklikTombolAdd(){endUser.mengeklikAdd();}
+
+    @When("Pengguna mengeklik tombol Upload a file")
+    public void penggunaMengeklikTombolUploadAFile(){endUser.mengeklikUploadAFile();}
+
+    @When("Pengguna mengeklik tombol Browse")
+    public void penggunaMengeklikTombolBrowse(){endUser.mengeklikBrowse();}
+
+    @When("Pengguna mengeklik tombol Upload this File")
+    public void penggunaMengeklikTombolUploadThisFile(){endUser.mengeklikUploadThisFile();}
+
+    @When("Pengguna mengeklik tombol Recent File")
+    public void penggunaMengeklikTombolRecentFile(){endUser.mengeklikRecentFile();}
+
+    @When("Pengguna mengeklik file yang sudah terupload")
+    public void penggunaMengeklikFileYangSudahTerupload(){endUser.mengeklikFileTerupload();}
+
+    @When("Pengguna mengeklik tombol Select this file")
+    public void penggunaMengeklikTombolSelectThisFile(){endUser.mengeklikSelectThisFile();}
+
+
+//    Then Pengguna melihat menu 'File submissions'
+    @Then("Pengguna melihat menu '$tulisanmenusubmission'")
+    public void penggunaAkanMelihatMenuSubmission(
+            //String tulisanmenusubmission
+            ){
+        //endUser.akanMelihatMenuSubmission(tulisanmenusubmission);
+        }
+
+
+//////////////////////////////////////////LIHAT SEMUA MATAKULIAH YANG DIAMBIL//////////////////////////////////
+
+    @Then("Pengguna melihat nama matakuliah '$judulmakul' pada menu Course Overview")
+    public void penggunaMelihatNamaMatakuliahDiCourseOverview(String judulmakul){endUser.akanMelihatMatakuliahYangDiambil(judulmakul);}
+
+
+
+//////////////////////////////////////////PERGANTIAN PASSWORD/////////////////////////////////////////////////////
+
+    @When("Pengguna mengeklik tombol Preferences")
+    public void penggunaMengeklikTombolPreferences(){endUser.mengeklikPreferences();}
+
+    @When("Pengguna mengeklik Change password")
+    public void penggunaMengeklikChangePassword(){endUser.mengeklikChangePassword();}
+
+    @When("Pengguna mengeklik textbox Current password")
+    public void penggunaMengeklikTextboxCurrentPassword(){endUser.mengeklikTextboxCurrentPassword();}
+
+    @When("Pengguna memasukkan '$currentPassword' pada textbox Current password")
+    public void penggunaMemasukkanCurrentPassword(String currentPassword){endUser.memasukkanCurrentPassword(currentPassword);}
+
+    @When("Pengguna mengeklik textbox New password")
+    public void penggunaMengeklikTextboxNewPassword(){endUser.mengeklikTextboxNewPassword();}
+
+    @When("Pengguna memasukkan '$newPassword' pada textbox New password")
+    public void ppenggunaMemasukkantextboxNewPassword(String newPassword){endUser.memasukkanNewPassword(newPassword);}
+
+    @When("Pengguna mengeklik textbox New password (again)")
+    public void penggunaMengeklikNewPasswordAgain(){endUser.mengeklikTextboxNewPasswordAgain();}
+
+    @When("Pengguna memasukkan '$newPassAgain' pada textbox New password (again)")
+    public void penggunaMemasukkanNewPasswordAagain(String newPassAgain ){endUser.memasukkanNewPasswordAgain(newPassAgain);}
+
+    @When("Pengguna mengeklik tombol Save changes")
+    public void penggunaMengeklikSaveChanges(){endUser.mengeklikSaveChange();}
+
+    @Then("Pengguna akan melihat pemberitahuan '$passwordChanged'")
+    public void penggunaAkanMelihatPemberitahuanBerhasil(String passwordChanged){endUser.akanMelihatNotifikasiPerubahanPassword(passwordChanged);}
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //    @AfterScenario
 //    public void afterScenario() {
 //        driver.quit();

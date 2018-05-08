@@ -1,10 +1,10 @@
-Login
+Logout
 Narrative:
-Untuk dapat keluar dari eLOK
 Sebagai seorang mahasiswa
 Saya ingin logout pada aplikasi e-LOK
+Untuk dapat keluar (logout) dari aplikasi eLOK
 
-GivenStories: stories/Account/Login.story
+GivenStories: stories/Account/Positive/Login.story
 Scenario: Logout
 Given Pengguna berada pada Halaman Dashboard e-LOK
 When Pengguna mengeklik nama

@@ -2,13 +2,16 @@ package com.mycompany.masterserenityjbehave.pages;
 
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
+import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
 
 /**
  * Created by Fransiskus A K on 08/02/2018.
  */
-public class CourseHomePage extends PageObject {
 
+
+public class CourseHomePage extends PageObject {
+    //Enroll
     @FindBy(xpath = "html/body/div[1]/div[2]/div/div[2]/div/div/section/div/div[2]/form/fieldset[2]/div/div/div/input")
     private WebElementFacade tblEnroll;
 
@@ -34,6 +37,13 @@ public class CourseHomePage extends PageObject {
     @FindBy(xpath = "html/body/div[1]/div[2]/div/div[2]/div/div/section/div/div[2]/form/fieldset[2]/div/div/div/input")
     private WebElementFacade tombolEnrollJarkom;
 
+    //Invalid Enroll
+    @FindBy(xpath = "html/body/div[1]/div[2]/div/div[2]/div/div/section/div/div[2]/form/fieldset[1]/div/div/div[2]/span")
+    private WebElementFacade erorInvalidEnrollKey;
+
+    public WebElementFacade akanLihatErorEnroll(){return erorInvalidEnrollKey;}
+
+
     public void klikTextboxEnrollKey(){
         textboxLockEnrollmentKey.click();}
 
@@ -48,10 +58,13 @@ public class CourseHomePage extends PageObject {
 
     public WebElementFacade temukanUnenroll(){ return tblUnenroll;}
 
+
+    //Unenroll
     public void unenroll(){tblUnenroll.click();}
 
     public void klikContinue(){tblContinue.click();}
 
     public WebElementFacade tidakMenemukanListMatakuliah() {return listMatakuliahBigData ;}
+
 
 }

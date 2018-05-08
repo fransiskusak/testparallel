@@ -1,10 +1,3 @@
-Meta:
-
-Narrative:
-As a user
-I want to perform an action
-So that I can achieve a business goal
-
 Scenario: Login pada aplikasi e-LOK dengan akun mahasiswa dengan Input Invalid
 Given Pengguna berada pada Homepage e-LOK
 When Pengguna mengeklik textboxt Username

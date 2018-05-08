@@ -3,6 +3,8 @@ package com.mycompany.masterserenityjbehave.steps.serenity;
 import com.mycompany.masterserenityjbehave.pages.*;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
+import org.yecht.Data;
+
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class EndUserSteps extends ScenarioSteps {
@@ -14,6 +16,8 @@ public class EndUserSteps extends ScenarioSteps {
     RegisterPage    registerPage;
     ErrorLoginPage errorLoginPage;
     ProfilePage profilePage;
+    SampleCoursePage sampleCoursePage;
+    UserAccountPage userAccountPage;
 
 //////////////////////////////LOGIN/////////////////////////////
     @Step
@@ -141,6 +145,12 @@ public class EndUserSteps extends ScenarioSteps {
     public void mengeklikTombolEnrollMe(){courseHomePage.klikEnrollMeJarkom();}
 
 
+
+////////////////////////////////////INVALID ENROLLMENT KEY/////////////////////////////////////
+
+    @Step
+    public void melihatErorEnroll(String erorenroll){courseHomePage.akanLihatErorEnroll().shouldContainText(erorenroll);}
+
 ////////////////////////////////MELIHAT PROFIL///////////////////////////
 
     @Step
@@ -193,7 +203,10 @@ public class EndUserSteps extends ScenarioSteps {
     public void mengeklikMatakuliah(){dashboardPage.klikTombolMatakuliah();}
 
     @Step
-    public void akanLihatSemuaMatakuliah() {dashboardPage.lihatSemuaMatakuliah();}
+    public void mengeklikMOOC(){dashboardPage.klikTombolMOOC();}
+
+    @Step
+    public void akanLihatSampleMatakuliah(String sampleJarkom) {dashboardPage.lihatSemuaMatakuliah().shouldContainText(sampleJarkom);}
 
 ///////////////////////////REGISTER SEBAGAI MAHASISWA/////////////////////
 
@@ -243,21 +256,27 @@ public class EndUserSteps extends ScenarioSteps {
     public void mengeklikTextboxCity(){registerPage.klikCityTown();}
 
     @Step
-    public void memasukkanCity(String citytown) {registerPage.klikCityTown();}
+    public void memasukkanCity(String citytown) {registerPage.masukkanCityTown(citytown);}
 
     @Step
     public void mengeklikTextboxCountry(){registerPage.klikDropdownCountry();}
 
     @Step
-    public void mengeklikCreate(){registerPage.klikCreate();}
+    public void menselectNegaraIndonesia(String negara){registerPage.selectNegara(negara);}
 
     @Step
-    public void menselectNegaraIndonesia(String negara){registerPage.selectNegara(negara);}
+    public void mengeklikCreateAccount(){registerPage.klikCreateAccount();}
 
     @Step
     public void akanMelihatKonfirmasiRegistrasi(String berhasil) {registerPage.akanLihatKonfirmasi().shouldContainText(berhasil);}
 
-///////////////////////////MENGEDIT PROFIL/////////////////////
+
+    ////////////////////////INVALID REGISTER///////////////////////////////////////////////////////////////////////////
+
+    @Step
+    public void akanLihatEror(String eror){registerPage.cekErorUsername().shouldContainText(eror);}
+
+    ///////////////////////MENGEDIT PROFIL/////////////////////
 
     @Step
     public void mengeklikTombolEditProfile(){profilePage.klikTombolEditProfile();}
@@ -318,6 +337,9 @@ public class EndUserSteps extends ScenarioSteps {
         homePage.lihatNama().shouldContainText(namaakunteredit);
     }
 
+    @Step
+    public void akanLihatErorEditEmail(String eroreditemail) {profilePage.temukanErorEmail().shouldContainText(eroreditemail);}
+
     ////////////////////UNENROLL////////////////////////////////////////
 
     @Step
@@ -330,4 +352,86 @@ public class EndUserSteps extends ScenarioSteps {
     public void tidakMenemukanListMatakuliah(String listbigdata) {
         //courseHomePage.tidakMenemukanListMatakuliah().shouldNotContainText(listbigdata);
         }
+
+
+
+    ////////////////////////////////MENGAKSES TUGAS///////////////////////////////////////////////////////
+
+    @Step
+    public void beradadiHomePageCourse(){sampleCoursePage.open();}
+
+    @Step
+    public void mengeklikTugasAwal(){sampleCoursePage.klikTugasAwal();}
+
+    @Step
+    public void mengeklikAddSubmission(){sampleCoursePage.klikAddSubsmission();}
+
+    @Step
+    public void mengeklikAdd(){sampleCoursePage.klikAdd();}
+
+    @Step
+    public void mengeklikUploadAFile(){sampleCoursePage.klikUploadAFile();}
+
+    @Step
+    public void mengeklikBrowse(){sampleCoursePage.klikBrowse();}
+
+    @Step
+    public void mengeklikUploadThisFile(){sampleCoursePage.klikUploadThisFile();}
+
+    @Step
+    public void mengeklikRecentFile(){sampleCoursePage.klikRecentFile();}
+
+    @Step
+    public void mengeklikFileTerupload(){sampleCoursePage.klikFileTerselect();}
+
+    @Step
+    public void mengeklikSelectThisFile(){sampleCoursePage.klikSelectThisFile();}
+
+    @Step
+    public void mengeklikSaveChanges(){sampleCoursePage.klikSaveChanges();}
+
+//    @Step
+//    public void akanMelihatMenuSubmission(String tulisanmenusubmission){sampleCoursePage.lihatMenuFileSubmission().shouldContainText(tulisanmenusubmission);}
+
+////////////////////////////////////LIHAT SEMUA MATAKULIAH YANG DIAMBIL//////////////////////////////////////
+    @Step
+    public void akanMelihatMatakuliahYangDiambil(String judulmakul){dashboardPage.lihatMakulSedangDiambil().shouldContainText(judulmakul);}
+
+
+   ////////////////////////////////////PENGGANTIAN PASSWORD//////////////////////////////////////////////////
+
+    @Step
+    public void mengeklikPreferences(){userAccountPage.klikPreferences();}
+
+
+    @Step
+    public void mengeklikChangePassword(){userAccountPage.klikChangePassword();}
+
+
+    @Step
+    public void mengeklikTextboxCurrentPassword(){userAccountPage.klikCurrent();}
+
+
+    @Step
+    public void memasukkanCurrentPassword(String currentPassword ){userAccountPage.ketikCurrent(currentPassword);}
+
+
+    @Step
+    public void mengeklikTextboxNewPassword(){userAccountPage.klikNew();}
+
+
+    @Step
+    public void memasukkanNewPassword(String newPassword ){userAccountPage.ketikNew(newPassword);}
+
+    @Step
+    public void mengeklikTextboxNewPasswordAgain(){userAccountPage.klikNewAgain();}
+
+    @Step
+    public void memasukkanNewPasswordAgain(String newPassAgain) {userAccountPage.ketikNewAgain(newPassAgain);}
+
+    @Step
+    public void mengeklikSaveChange(){userAccountPage.klikSaveChanges();}
+
+    @Step
+    public void akanMelihatNotifikasiPerubahanPassword(String passwordChanged ) {userAccountPage.akanMelihatNotifikasiPenggantianPassword().shouldContainText(passwordChanged);}
 }

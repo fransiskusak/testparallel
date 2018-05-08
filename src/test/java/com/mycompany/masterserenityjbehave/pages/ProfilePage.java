@@ -47,6 +47,8 @@ public class ProfilePage  extends PageObject {
     @FindBy(xpath = "html/body/div[1]/div[2]/div/div[2]/section/div/form/fieldset[6]/div/div[1]/div/input")
     private WebElementFacade tombolUpdateProfile;
 
+    @FindBy(xpath = "html/body/div[1]/div[2]/div/div[2]/section/div/form/fieldset[1]/div/div[3]/div[2]/span")
+    private WebElementFacade emailErrorMessage;
 
     public void klikTombolEditProfile(){tombolEditProfil.click();}
 
@@ -83,5 +85,7 @@ public class ProfilePage  extends PageObject {
     public void masukkanDescription(String descriptionedit){boxDescriptionEdit.type(descriptionedit);}
 
     public void klikTombolUpdateProfil(){tombolUpdateProfile.click();}
+
+    public WebElementFacade temukanErorEmail(){return emailErrorMessage;}
 }
 

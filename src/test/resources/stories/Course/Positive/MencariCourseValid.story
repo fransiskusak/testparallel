@@ -1,11 +1,10 @@
-Login
 Narrative:
-Untuk dapat memanfaatkan fitur-fitur eLOK
 Sebagai seorang mahasiswa
-Saya ingin login pada aplikasi e-LOK
+Saya ingin menggunakan fitur search pada aplikasi e-LOK
+Untuk dapat menemukan matakuliah yang saya inginkan dengan cepat
 
-GivenStories: stories/Account/Login.story
-Scenario: Mencari Course
+GivenStories: stories/Account/Positive/Login.story
+Scenario: Mencari sebuah matakuliah Course
 Given Pengguna berada pada Halaman Dashboard e-LOK
 When Pengguna mengeklik textboxt Search Courses
 When Pengguna mengetik 'Big Data Komputasional'

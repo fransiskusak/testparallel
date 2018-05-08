@@ -35,26 +35,23 @@ public class RegisterPage extends PageObject {
     @FindBy(xpath = "html/body/div[3]/div[2]/div/section/div/form/fieldset[2]/div/div[6]/div[2]/select")
     private WebElementFacade dropdownCountry ;
 
-    @FindBy(xpath = "html/body/div[3]/div[2]/div/section/div/form/fieldset[3]/div/div[1]/div/input[1]")
-    private WebElementFacade tombolCreate ;
-
-    @FindBy(xpath = "html/body/div[3]/div[2]/div/section/div/form/fieldset[3]/div/div[1]/div/input[2]")
-    private WebElementFacade boxCancel ;
-
     @FindBy(xpath= ".//*[@id='id_country']")
     private WebElementFacade selectCountry;
 
-    @FindBy(xpath = "html/body/div[1]/div[2]/div/div[2]/section/div/div[2]/form/div/input"
-            //id = "notice"
-            )
+    @FindBy(xpath = "html/body/div[3]/div[2]/div/section/div/form/fieldset[3]/div/div[1]/div/input[1]")
+    private WebElementFacade tombolCreateAccount;
+
+    @FindBy(xpath = "html/body/div[3]/div[2]/div/section/div/form/fieldset[3]/div/div[1]/div/input[2]")
+    private WebElementFacade boxCancel;
+
+
+    @FindBy(xpath ="html/body/div[1]/div[2]/div/div[2]/section/div/div[1]/p[1]")
     private WebElementFacade konfirmasiBerhasil;
 
-
-//    @FindBy(xpath = "")
-//    private WebElementFacade boxSurname ;
-//
-//    @FindBy(xpath = "")
-//    private WebElementFacade boxSurname ;
+//tombol continue html/body/div[1]/div[2]/div/div[2]/section/div/div[2]/form/div/input
+// If you continue to have difficulty, contact the site administrator. html/body/div[1]/div[2]/div/div[2]/section/div/div[1]/p[3]
+// It contains easy instructions to complete your registration. html/body/div[1]/div[2]/div/div[2]/section/div/div[1]/p[2]
+// An email should have been sent to your address at scsc@acscs.com  html/body/div[1]/div[2]/div/div[2]/section/div/div[1]/p[1]
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -91,13 +88,21 @@ public class RegisterPage extends PageObject {
 
     public void klikDropdownCountry() {dropdownCountry.click();}
 
-    //klik salah satu dari di dropdown
 
     public void selectNegara(String Indonesia) {selectCountry.selectByVisibleText(Indonesia);}
 
-    public void klikCreate() {tombolCreate.click();}
+    public void klikCreateAccount() {tombolCreateAccount.click();}
 
     public WebElementFacade akanLihatKonfirmasi() {return konfirmasiBerhasil;}
 
 
+
+
+    //INVALID REGISTER
+
+    @FindBy(xpath = "html/body/div[3]/div[2]/div/section/div/form/fieldset[1]/div/div[1]/div[2]/span")
+    private WebElementFacade erormessageusername;
+
+    public WebElementFacade cekErorUsername(){
+        return erormessageusername;}
 }

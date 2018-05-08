@@ -10,33 +10,30 @@ public class AcceptanceTestSuite extends SerenityStories {
     public List<String> storyPaths() {
         List<String> storyPaths = new ArrayList<>();
 
+//dirun duluan lalu abis itu ganti nama akun dan passwordnya
+//        storyPaths.add("stories/Account/Positive/MengeditProfileValid.story");
+//        storyPaths.add("stories/Account/Negative/MengeditProfileInvalid.story");
+//        storyPaths.add("stories/Account/Positive/MengeditPasswordValid.story");
 
-        //s
-//        storyPaths.add("stories/Account/Login.story");
-//        storyPaths.add("stories/Account/LoginInvalid.story");
-//        storyPaths.add("stories/Account/MelihatProfilValid.story");
-//        storyPaths.add("stories/Account/Logout.story");
-//        storyPaths.add( "stories/Course/MancariCourseValid.story" );
-//        storyPaths.add( "stories/Course/MengenrollValid.story" );
+        storyPaths.add("stories/Course/Positive/MengaksesTugas.story");
+
+//        storyPaths.add("stories/Account/Positive/Login.story");
+//        storyPaths.add("stories/Account/Positive/Logout.story");
+//        storyPaths.add("stories/Account/Negative/LoginInvalid.story");
+//        storyPaths.add("stories/Account/Positive/MelihatProfilValid.story");
+//        storyPaths.add("stories/Course/Positive/MencariCourseValid.story");
+//        storyPaths.add("stories/Course/Positive/MengenrollTanpaEnrollmentKeyValid.story");
+//        storyPaths.add( "stories/Course/Positive/MelihatSemuaMatakuliahValid.story" );
+//        storyPaths.add("stories/Course/Positive/MengenrollDenganEnrollmentKeyValid.story");
+//        storyPaths.add("stories/Course/Positive/MelihatSemuaMatakuliahYangDiambil.story");
+//        storyPaths.add("stories/Course/Positive/MelakukanUnenrollValid.story");
+//        storyPaths.add("stories/Course/Negative/MengenrollDenganEnrollmentKeyInvalid.story");
+//        storyPaths.add("stories/Account/Positive/MendaftarAkunElokValid.story");
+//        storyPaths.add("stories/Account/Negative/MendaftarAkunElokInvalid.story");
+
+
 //        storyPaths.add( "stories/Course/MelihatGradeValid.story" );
-//        storyPaths.add( "stories/Course/MelihatSemuaMatakuliahValid.story" );
 //        storyPaths.add( "stories/Account/LihatMessage.story" );
-//        storyPaths.add("stories/Account/MengeditProfileValid.story");
-
-        //pending dibagian akhir testnya ada pending
-        //storyPaths.add("stories/Account/MendaftarAkunElokValid.story");
-
-
-
-        //otw success
-        //LOGIN NYA DIGANTI AKUN FRANS14645 DULU
-        storyPaths.add("stories/Course/MengenrollDenganEnrollmentKeyValid.story");
-
-//kurang implementasi then
-        //storyPaths.add("stories/Course/MelakukanUnenrollValid.story");
-        //MelihatSemuaMatakuliahValid.story
-
         return storyPaths;
-
     }
 }

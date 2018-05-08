@@ -1,12 +1,6 @@
-Meta:
 
-Narrative:
-As a user
-I want to perform an action
-So that I can achieve a business goal
-
-GivenStories: stories/Account/Login.story
-Scenario: Melakukan unenroll
+GivenStories: stories/Account/Positive/Login.story
+Scenario: Melakukan unenroll dari sebuah matakuliah
 Given Pengguna berada pada Halaman Dashboard e-LOK
 When Pengguna mengeklik textboxt Search Courses
 When Pengguna mengetik 'Big Data Komputasional'

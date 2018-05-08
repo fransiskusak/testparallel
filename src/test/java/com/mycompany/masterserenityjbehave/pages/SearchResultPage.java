@@ -15,8 +15,7 @@ public class SearchResultPage extends PageObject {
 
 
     /////////////////////////ENROLL OPEN/////////////////////////////////////
-    //@FindBy(xpath = "html/body/div[1]/div[2]/div/div[2]/div/div/section/div/div[1]/div/div[2]/div[1]/h3/a/span[3]")
-    @FindBy(xpath = "html/body/div[1]/div[2]/div/div[2]/div/div/section/div/div[1]/div[1]/div[2]/div[2]/h3/a/span[2]")
+    @FindBy(xpath = "html/body/div[1]/div[2]/div/div[2]/div/div/section/div/div[1]/div/div[2]/div[1]/h3/a")
     private WebElementFacade tulisanNamaMakul;
 
     public void klikTulisanNamaMakul() {

@@ -1,12 +1,10 @@
-
-
 Narrative:
 Sebagai seorang mahasiswa peserta matakuliah Jaringan Komputer
 Saya ingin enroll pada matakuliah Jaringan Komputer  di e-LOK menggunakan enrollment key
+Untuk dapat mengakses konten pembelajaran Jaringan Komputer
 
 Scenario: Enroll sebuah matakuliah di e-LOK dengan enrollment key
-GivenStories: stories/Account/Login.story
-GivenStories: stories/Course/MancariCourseValid.story
+GivenStories: stories/Account/Positive/Login.story
 Given Pengguna berada pada Halaman Dashboard e-LOK
 When Pengguna mengeklik textboxt Search Courses
 When Pengguna mengetik 'Jaringan Komputer'
