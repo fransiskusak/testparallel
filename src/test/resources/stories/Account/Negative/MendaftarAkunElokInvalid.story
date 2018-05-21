@@ -1,4 +1,4 @@
-Scenario: Mendaftar akun pengguna di e-LOK dengan input invalid
+Scenario: Mendaftar akun eLOK dengan input bernilai invalid
 Given Pengguna berada pada Homepage e-LOK
 When Pengguna mengeklik tombol register
 When Pengguna mengklik textbox Username

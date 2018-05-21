@@ -1,4 +1,5 @@
-package com.mycompany.masterserenityjbehave.pages;
+package com.mycompany.elok.pages;
+
 
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.pages.PageObject;

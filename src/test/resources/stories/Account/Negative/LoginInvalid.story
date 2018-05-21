@@ -1,4 +1,4 @@
-Scenario: Login pada aplikasi e-LOK dengan akun mahasiswa dengan Input Invalid
+Scenario: Login pada eLOK dengan input bernilai Invalid
 Given Pengguna berada pada Homepage e-LOK
 When Pengguna mengeklik textboxt Username
 When Pengguna mengetik usernamenya 'FRANSISKUSAK'

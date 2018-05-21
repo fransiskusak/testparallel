@@ -1,12 +1,10 @@
-Meta:
-
 Narrative:
 Sebagai seorang mahasiswa
 Saya ingin memperbaharui informasi profil akun saya di eLOK
 Sehingga informasi yang tercanmtum di halaman profil saya lebih update
 
 
-Scenario: Mengedit halaman profile akun eLOK dengan email Invalid (sudah digunakan)
+Scenario: Mengedit halaman profile akun eLOK dengan input bernilai invalid (sudah digunakan)
 Given Pengguna berada pada Homepage e-LOK
 When Pengguna mengeklik textboxt Username
 When Pengguna mengetik usernamenya 'FRANS14645'

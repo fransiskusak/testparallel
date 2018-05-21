@@ -1,6 +1,6 @@
 
 GivenStories: stories/Account/Positive/Login.story
-Scenario: Melakukan unenroll dari sebuah matakuliah
+Scenario: Unenroll dari sebuah matakuliah
 Given Pengguna berada pada Halaman Dashboard e-LOK
 When Pengguna mengeklik textboxt Search Courses
 When Pengguna mengetik 'Big Data Komputasional'

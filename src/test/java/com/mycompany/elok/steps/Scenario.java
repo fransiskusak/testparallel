@@ -1,23 +1,16 @@
-package com.mycompany.masterserenityjbehave.steps;
-
+package com.mycompany.elok.steps;
 import net.thucydides.core.annotations.Steps;
 import org.jbehave.core.annotations.*;
 
-import com.mycompany.masterserenityjbehave.steps.serenity.EndUserSteps;
-import org.yecht.Data;
+import com.mycompany.elok.steps.serenity.EndUserSteps;
 
-public class DefinitionSteps {
+public class Scenario {
 
     @Steps
     EndUserSteps endUser;
 
     @Given("Pengguna berada pada Homepage e-LOK")
-    public void penggunaBeradaPadaHomepage() {
-        endUser.beradaDiHomepage();
-    }
-
-    @Given("Pengguna berada pada Halaman Dashboard e-LOK")
-    public void penggunaBeradaPadaHalamanDashboard() {endUser.beradaDiDashboardpage();}
+    public void penggunaBeradaPadaHomepage() { endUser.beradaDiHomepage();}
 
     @When("Pengguna mengeklik textboxt Username")
     public void penggunaMengeklikBoxUsername() {
@@ -42,13 +35,14 @@ public class DefinitionSteps {
 ////////////////////////LOGIN INVALID PASSWORD////////////////////////////
 
 
-    @When("Pengguna mengetik passwordnya '$invalidpassword'")
-    public void penggunaMengetikInvalidPassword(String invalidpassword) {endUser.mengetikInvalidPassword(invalidpassword);}
+    //@When("Pengguna mengetik passwordnya '$invalidpassword'")
+    //public void penggunaMengetikInvalidPassword(String invalidpassword) {endUser.mengetikInvalidPassword(invalidpassword);}
 
     @Then("Pengguna akan melihat pesan eror yaitu '$erorlogin'")
     public void akanMelihatErrorLogin(String erorlogin) {endUser.akanLihatPesanErrorLogin(erorlogin);}
 
 ////////////////////////////////SEARCH MAKUL BERDASAR KEYWORD////////////////////////////////////////
+
     @When("Pengguna mengeklik textboxt Search Courses")
     public void penggunaKlikBoxSearch(){endUser.mengeklikBoxSearch();}
 
@@ -95,9 +89,10 @@ public class DefinitionSteps {
     public void terdapatPesanErorIncorrect(String erorenroll){endUser.melihatErorEnroll(erorenroll);}
 
 
-// ///////////////////////////////////////////////////////////////////////
+// ///////////////////////LOGOUT//////////////////////////////////////////
 
-
+    @Given("Pengguna berada pada Halaman Dashboard e-LOK")
+    public void penggunaBeradaPadaHalamanDashboard() {endUser.beradaDiDashboardpage();}
 
     @When("Pengguna mengeklik nama")
     public void penggunaKlikNama(){endUser.mengeklikNama();}
@@ -109,7 +104,7 @@ public class DefinitionSteps {
     public void penggunaLihatTulisanDiHomepage(String isiTentangElok){endUser.akanLihatTulisan(isiTentangElok);}
 
 
-/////////////////////////////////////////////////////////////////////////
+///////////////////////////LIHAT PROFIL//////////////////////////////////////////////
 
     @When("Pengguna mengeklik tombol profil")
     public void penggunaKlikProfil(){endUser.mengeklikTombolProfil();}
@@ -117,14 +112,14 @@ public class DefinitionSteps {
     @Then("Pengguna akan melihat deskripsi '$deskripsiProfil' di halaman profil")
     public void penggunaAkanMelihatProfilnya(String deskripsiProfil) {endUser.akanLihatProfilnya(deskripsiProfil);}
 
-
+////////////////////////BATAL GRADE/////////////////////////////////////////
     @When("Pengguna mengeklik tombol grade")
     public void penggunaMengeklikTombolGrade() {endUser.mengeklikGrade();}
 
     @Then("Pengguna akan melihat nilai-nilai nya")
     public void penggunaAkanMelihatGrade() {endUser.akanLihatGrade();}
 
-/////////////////////////////////////////////////////////////////////////
+///////////////////////////MESSAGE//////////////////////////////////////////////
 
     @When("Pengguna mengeklik tombol messages")
     public void penggunaMengeklikTombolMessages() {endUser.mengeklikMessages();}
@@ -132,7 +127,7 @@ public class DefinitionSteps {
     @Then("Pengguna akan melihat messages-nya '$isimessages'")
     public void penggunaAkanMelihatMessagesnya(String isimessages) {endUser.akanLihatMessages(isimessages);}
 
-/////////////////////////////////////////////////////////////////////////
+////////////////////////////MATAKULIAH TERSEDIA/////////////////////////////////////////////
 
     @When("Pengguna mengeklik tombol Matakuliah")
     public void penggunaMengeklikTombolMatakuliah() {endUser.mengeklikMatakuliah();}
@@ -272,6 +267,8 @@ public class DefinitionSteps {
     @Then("Pengguna melihat nama akunnya menjadi '$namaakunteredit'")
     public void penggunaAkanMelihatNamaAkunnyaBerubah(String namaakunteredit ){endUser.akanLihatNamaBaruPengguna(namaakunteredit);}
 
+
+    /////////////////////////////////////////INVALID EDIT PROFIL//////////////////////////
     @Then("Pengguna melihat pesan eror '$This email address is already registered.'")
     public void penggunaAkanMelihatErorEditEmail(String eroreditemail) {endUser.akanLihatErorEditEmail(eroreditemail);}
 
@@ -318,6 +315,15 @@ public class DefinitionSteps {
 
     @When("Pengguna mengeklik tombol Select this file")
     public void penggunaMengeklikTombolSelectThisFile(){endUser.mengeklikSelectThisFile();}
+
+    @When("Pengguna mengeklik tombol overwrite")
+    public void penggunaMengeklikTombolOverwrite() {endUser.mengeklikOverwrite();}
+
+    @When("Pengguna mengeklik Save changes")
+    public void penggunaMengeklikSaveChangesTugas(){endUser.mengeklikSaveChanges();}
+
+    @Then("Pengguna melihat '$submissionstatus' pada submission statusnya")
+    public void penggunaMelihatSubmittedForGrading(String submissionstatus){endUser.akanMelihatSubmissionStatus(submissionstatus);}
 
 
 //    Then Pengguna melihat menu 'File submissions'

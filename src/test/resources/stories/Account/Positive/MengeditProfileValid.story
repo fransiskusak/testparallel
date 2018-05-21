@@ -6,18 +6,18 @@ Saya ingin memperbaharui informasi profil akun saya di eLOK
 Sehingga informasi yang tercanmtum di halaman profil saya lebih update
 
 
-Scenario: Mengedit halaman profile pada sebuah akun di aplikasi eLOK
+Scenario: Mengedit halaman profile  sebuah akun eLOK
 Given Pengguna berada pada Homepage e-LOK
 When Pengguna mengeklik textboxt Username
 When Pengguna mengetik usernamenya 'FRANS14645'
 When Pengguna mengeklik textboxt Password
-When Pengguna mengetik passwordnya 'Elokelok25,'
+When Pengguna mengetik passwordnya 'Elokelok24.'
 When Pengguna mengeklik tombol login
 When Pengguna mengeklik nama
 When Pengguna mengeklik tombol profil
 When Pengguna mengeklik tombol Edit profile
 When Pengguna mengeklik field First name
-When Pengguna memasukkan 'F A' ke field First name
+When Pengguna memasukkan 'Fransiskus A' ke field First name
 When Pengguna mengeklik field Surname
 When Pengguna memasukkan 'Kristiawan' ke field Surname
 When Pengguna mengeklik field Email address
@@ -33,4 +33,4 @@ When Pengguna mengeklik pilihan Server timezone (Asia/Jakarta)
 When Pengguna mengeklik field Description
 When Pengguna memasukkan 'Saya adalah mahasiswa DTETI angkatan 2014' ke field Description
 When Pengguna mengeklik tombol update profil
-Then Pengguna melihat nama akunnya menjadi 'F A Kristiawan'
+Then Pengguna melihat nama akunnya menjadi 'Fransiskus A Kristiawan'

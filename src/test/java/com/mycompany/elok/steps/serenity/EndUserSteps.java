@@ -1,14 +1,11 @@
-package com.mycompany.masterserenityjbehave.steps.serenity;
-
-import com.mycompany.masterserenityjbehave.pages.*;
+package com.mycompany.elok.steps.serenity;
+import com.mycompany.elok.pages.*;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 import org.yecht.Data;
-
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class EndUserSteps extends ScenarioSteps {
-
     HomePage homePage;
     DashboardPage dashboardPage;
     SearchResultPage searchResultPage;
@@ -18,7 +15,6 @@ public class EndUserSteps extends ScenarioSteps {
     ProfilePage profilePage;
     SampleCoursePage sampleCoursePage;
     UserAccountPage userAccountPage;
-
 //////////////////////////////LOGIN/////////////////////////////
     @Step
     public void beradaDiHomepage() {
@@ -388,7 +384,13 @@ public class EndUserSteps extends ScenarioSteps {
     public void mengeklikSelectThisFile(){sampleCoursePage.klikSelectThisFile();}
 
     @Step
+    public void mengeklikOverwrite() {sampleCoursePage.klikOverwrite();}
+
+    @Step
     public void mengeklikSaveChanges(){sampleCoursePage.klikSaveChanges();}
+
+    @Step
+    public void akanMelihatSubmissionStatus(String submissionstatus){sampleCoursePage.akanLihatSubmissionStatus().shouldContainText(submissionstatus);}
 
 //    @Step
 //    public void akanMelihatMenuSubmission(String tulisanmenusubmission){sampleCoursePage.lihatMenuFileSubmission().shouldContainText(tulisanmenusubmission);}

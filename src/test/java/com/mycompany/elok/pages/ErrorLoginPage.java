@@ -1,4 +1,5 @@
-package com.mycompany.masterserenityjbehave.pages;
+package com.mycompany.elok.pages;
+
 
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
