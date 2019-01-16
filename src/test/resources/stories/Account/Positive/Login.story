@@ -1,8 +1,3 @@
-Login
-Narrative:
-Sebagai seorang mahasiswa
-Saya ingin login pada aplikasi e-LOK
-Untuk dapat memanfaatkan fitur-fitur eLOK
 
 Scenario: Login pada aplikasi eLOK
 Given Pengguna berada pada Homepage e-LOK
