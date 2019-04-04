@@ -19,9 +19,9 @@ public class AcceptanceTestSuite extends SerenityStories {
 
 
         storyPaths.add("stories/Account/Positive/Login.story");
-        storyPaths.add("stories/Account/Positive/Logout.story");
+
         //storyPaths.add("stories/Course/Negative/MengenrollDenganEnrollmentKeyInvalid.story");
-        storyPaths.add("stories/Account/Negative/LoginInvalid.story");
+
 //        storyPaths.add("stories/Account/Positive/MelihatProfil.story");
         //storyPaths.add("stories/Course/Positive/MencariCourse.story");
         //storyPaths.add("stories/Course/Positive/MengenrollTanpaEnrollmentKey.story");
@@ -34,4 +34,19 @@ public class AcceptanceTestSuite extends SerenityStories {
         //storyPaths.add("stories/Account/Negative/MengeditProfileInvalid.story");
         return storyPaths;
     }
+
+    public List<String> storyPaths2() {
+        List<String> storyPaths = new ArrayList<>();
+        storyPaths.add("stories/Account/Positive/Logout.story");
+        return storyPaths;
+
+    }
+
+    public List<String> storyPaths3() {
+        List<String> storyPaths = new ArrayList<>();
+        storyPaths.add("stories/Account/Negative/LoginInvalid.story");
+        return storyPaths;
+
+    }
+
 }
