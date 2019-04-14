@@ -12,7 +12,8 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <serenity.version>1.2.2-rc.1</serenity.version>
-        <serenity.jbehave.version>1.18.0</serenity.jbehave.version>
+        <!--default <serenity.jbehave.version>1.18.0</serenity.jbehave.version>-->
+        <serenity.jbehave.version>1.13.0</serenity.jbehave.version>
         <webdriver.driver>firefox</webdriver.driver>
         <!--<webdriver.driver>chrome</webdriver.driver>-->
         <!--<webdriver.driver>phantomjs</webdriver.driver>-->
@@ -72,6 +73,18 @@
             <artifactId>lambdaj</artifactId>
             <version>2.3.3</version>
         </dependency>
+        <!--<dependency>-->
+            <!--<groupId>net.serenity-bdd</groupId>-->
+            <!--<artifactId>serenity-jbehave</artifactId>-->
+            <!--<version>1.13.0</version>-->
+            <!--<scope>test</scope>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>net.serenity-bdd</groupId>-->
+            <!--<artifactId>serenity-jbehave</artifactId>-->
+            <!--<version>1.13.0</version>-->
+            <!--<scope>test</scope>-->
+        <!--</dependency>-->
     </dependencies>
     <build>
         <plugins>
@@ -83,32 +96,67 @@
                     <skip>true</skip>
                 </configuration>
             </plugin>
+            <!--<plugin>-->
+                <!--<artifactId>maven-failsafe-plugin</artifactId>-->
+                <!--<version>2.18.1</version>-->
+                <!--<configuration>-->
+                    <!--<includes>-->
+                        <!--<include>**/*Test.java</include>-->
+                        <!--<include>**/*TestSuite.java</include>-->
+                        <!--<include>**/Test*.java</include>-->
+                        <!--<include>**/When*.java</include>-->
+                    <!--</includes>-->
+
+                    <!--<argLine>-Xmx512m</argLine>-->
+                    <!--<systemPropertyVariables>-->
+                        <!--<webdriver.driver>${webdriver.driver}</webdriver.driver>-->
+                    <!--</systemPropertyVariables>-->
+                <!--</configuration>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--&lt;!&ndash;<storyTimeoutInSecs>6000</storyTimeoutInSecs>&ndash;&gt;-->
+                        <!--<goals>-->
+                            <!--<goal>integration-test</goal>-->
+                            <!--<goal>verify</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
             <plugin>
                 <artifactId>maven-failsafe-plugin</artifactId>
-                <version>2.18.1</version>
+                <version>2.16</version>
                 <configuration>
-                    <includes>
-                        <include>**/*Test.java</include>
-                        <include>**/*TestSuite.java</include>
-                        <include>**/Test*.java</include>
-                        <include>**/When*.java</include>
-                    </includes>
-
-                    <argLine>-Xmx512m</argLine>
                     <systemPropertyVariables>
                         <webdriver.driver>${webdriver.driver}</webdriver.driver>
                     </systemPropertyVariables>
+                    <includes>
+                        <include>**/acceptancetest/*.java</include>
+                        <include>**/Logout*.java</include>
+                        <include>**/Login*.java</include>
+
+                        <include>**/*Test.java</include>
+                        <!--<include>**/*TestSuite.java</include>-->
+                        <include>**/Test*.java</include>
+                        <include>**/When*.java</include>
+
+                        <include>**/tests/*.java</include>
+                    </includes>
+                    <forkCount>2</forkCount>
+                    <reuseForks>true</reuseForks>
+                    <!--<threadCount>1</threadCount>-->
                 </configuration>
                 <executions>
                     <execution>
-                        <!--<storyTimeoutInSecs>6000</storyTimeoutInSecs>-->
                         <goals>
+                            <!--<goal>generate-sources</goal>-->
                             <goal>integration-test</goal>
                             <goal>verify</goal>
+
                         </goals>
                     </execution>
                 </executions>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>

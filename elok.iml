@@ -111,7 +111,7 @@
     <orderEntry type="library" name="Maven: org.jsoup:jsoup:1.9.2" level="project" />
     <orderEntry type="library" name="Maven: com.google.jimfs:jimfs:1.0" level="project" />
     <orderEntry type="library" name="Maven: es.nitaur.markdown:txtmark:0.16" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: net.serenity-bdd:serenity-jbehave:1.18.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: net.serenity-bdd:serenity-jbehave:1.13.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: de.codecentric:jbehave-junit-runner:1.2.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.codehaus.groovy:groovy-all:2.4.4" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.thoughtworks.paranamer:paranamer:2.8" level="project" />

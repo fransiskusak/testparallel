@@ -6,6 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AcceptanceTestSuite extends SerenityStories {
+//    @Override
+//    public storyPaths() {
+//        findStoriesCalled("stories/Account/Positive/Login.story");
+
     @Override
     public List<String> storyPaths() {
         List<String> storyPaths = new ArrayList<>();
@@ -14,8 +18,9 @@ public class AcceptanceTestSuite extends SerenityStories {
         //storyPaths.add("stories/Account/Positive/MengeditProfileValid.story");
         //storyPaths.add("stories/Account/Positive/MengeditPasswordValid.story");
         //storyPaths.add("stories/Account/Positive/MendaftarAkunElokValid.story");
-        storyPaths.add("stories/Account/Positive/Login.story");
         storyPaths.add("stories/Account/Positive/Logout.story");
+        storyPaths.add("stories/Account/Positive/Login.story");
+
         //storyPaths.add("stories/Course/Negative/MengenrollDenganEnrollmentKeyInvalid.story");
 //        storyPaths.add("stories/Account/Positive/MelihatProfil.story");
         //storyPaths.add("stories/Course/Positive/MencariCourse.story");
@@ -28,17 +33,17 @@ public class AcceptanceTestSuite extends SerenityStories {
         //storyPaths.add("stories/Account/Negative/MengeditProfileInvalid.story");
         return storyPaths;
     }
-
-//    public List<String> storyPaths2() {
-//        List<String> storyPaths = new ArrayList<>();
-
-//        return storyPaths;
 //
-//    }
+////    public List<String> storyPaths2() {
+////        List<String> storyPaths = new ArrayList<>();
 //
-//    public List<String> storyPaths3() {
-//        List<String> storyPaths = new ArrayList<>();
-//        storyPaths.add("stories/Account/Negative/LoginInvalid.story");
+////        return storyPaths;
+////
+////    }
+////
+////    public List<String> storyPaths3() {
+////        List<String> storyPaths = new ArrayList<>();
+////        storyPaths.add("stories/Account/Negative/LoginInvalid.story");
 //        return storyPaths;
 //
 //    }

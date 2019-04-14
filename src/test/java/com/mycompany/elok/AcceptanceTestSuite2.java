@@ -5,11 +5,11 @@
 //import java.util.ArrayList;
 //import java.util.List;
 //
-//public class AcceptanceTestSuite3 extends SerenityStories {
+//public class AcceptanceTestSuite2 extends SerenityStories {
 //    @Override
 //    public List<String> storyPaths() {
 //        List<String> storyPaths = new ArrayList<>();
-//        storyPaths.add("stories/Account/Positive/LoginInvalid.story");
+//        storyPaths.add("stories/Account/Positive/Logout.story");
 //        return storyPaths;
 //    }
 //}
