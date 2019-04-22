@@ -8,4 +8,4 @@ Scenario: Melihat matakuliah yang di-enroll
 GivenStories: stories/Account/Positive/Login.story
 GivenStories: stories/Course/MengenrollDenganEnrollmentKeyValid.story
 Given Pengguna berada pada Halaman Dashboard e-LOK
-Then Pengguna melihat nama matakuliah '001-TIF216-Jaringan Komputer' pada menu Course Overview
+Then Pengguna melihat nama matakuliah 'Jaringan Komputer-TIF216' pada menu Course Overview

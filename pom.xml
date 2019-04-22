@@ -131,8 +131,30 @@
                     </systemPropertyVariables>
                     <includes>
                         <include>**/acceptancetest/*.java</include>
-                        <include>**/Logout*.java</include>
-                        <include>**/Login*.java</include>
+
+                        <!--<include>**/Logout*.java</include>-->
+                        <!--<include>**/Login*.java</include>-->
+                        <!--<include>**/LoginInvalid*.java</include>-->
+                        <!--<include>**/MendaftarAkunElokInvalid*.java</include>-->
+                        <!--<include>**/*MencariCourse.java</include>-->
+
+                        <!--mengunenroll makul big data dulu-->
+                        <include>**/*MengenrollTanpaEnrollmentKey.java</include>
+
+                        <!--diubah nama profilnya dulu-->
+                        <include>**/MengeditProfileValid*.java</include>
+                        <!--dibenerin nama di profilnya-->
+                        <include>**/MelihatProfil*.java</include>
+
+                        <include>**/*MengenrollDenganEnrollmentKeyValid.java</include>
+                        <include>**/MengaksesTugas*.java</include>
+
+                        <include>**/MengeditProfileInvalid*.java</include>
+                        <include>**/*MelihatSemuaMatakuliah.java</include>
+                        <include>**/*MelihatSemuaMatakuliahYangDiambil.java</include>
+                        <include>**/*MelakukanUnenroll.java</include>
+                        <include>**/*MengenrollDenganEnrollmentKeyInvalid.java</include>
+
 
                         <include>**/*Test.java</include>
                         <!--<include>**/*TestSuite.java</include>-->
@@ -141,8 +163,8 @@
 
                         <include>**/tests/*.java</include>
                     </includes>
-                    <forkCount>2</forkCount>
-                    <reuseForks>true</reuseForks>
+                    <forkCount>3</forkCount>
+                    <reuseForks>false</reuseForks>
                     <!--<threadCount>1</threadCount>-->
                 </configuration>
                 <executions>
