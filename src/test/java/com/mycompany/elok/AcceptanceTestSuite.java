@@ -6,9 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AcceptanceTestSuite extends SerenityStories {
-//    @Override
-//    public storyPaths() {
-//        findStoriesCalled("stories/Account/Positive/Login.story");
 
     @Override
     public List<String> storyPaths() {
@@ -22,7 +19,7 @@ public class AcceptanceTestSuite extends SerenityStories {
 //        storyPaths.add("stories/Account/Positive/Login.story");
 
         //storyPaths.add("stories/Course/Negative/MengenrollDenganEnrollmentKeyInvalid.story");
-        storyPaths.add("stories/Account/Positive/MelihatProfil.story");
+//        storyPaths.add("stories/Account/Positive/MelihatProfil.story");
         //storyPaths.add("stories/Course/Positive/MencariCourse.story");
         //storyPaths.add("stories/Course/Positive/MengenrollTanpaEnrollmentKey.story");
         //storyPaths.add( "stories/Course/Positive/MelihatSemuaMatakuliah.story" );
@@ -33,19 +30,4 @@ public class AcceptanceTestSuite extends SerenityStories {
         //storyPaths.add("stories/Account/Negative/MengeditProfileInvalid.story");
         return storyPaths;
     }
-//
-////    public List<String> storyPaths2() {
-////        List<String> storyPaths = new ArrayList<>();
-//
-////        return storyPaths;
-////
-////    }
-////
-////    public List<String> storyPaths3() {
-////        List<String> storyPaths = new ArrayList<>();
-////        storyPaths.add("stories/Account/Negative/LoginInvalid.story");
-//        return storyPaths;
-//
-//    }
-
 }

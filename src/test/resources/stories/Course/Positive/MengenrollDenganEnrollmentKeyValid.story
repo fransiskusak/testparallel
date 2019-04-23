@@ -7,7 +7,7 @@ Scenario: Enroll sebuah matakuliah dengan enrollment key
 GivenStories: stories/Account/Positive/Login.story
 Given Pengguna berada pada Halaman Dashboard e-LOK
 When Pengguna mengeklik textboxt Search Courses
-When Pengguna mengetik 'Jaringan Komputer'
+When Pengguna mengetik 'Jaringan Komputer-TIF216'
 When Pengguna mengeklik tombol cari
 When Pengguna mengeklik judul matakuliah Jaringan Komputer
 When Pengguna mengeklik textbox untuk memasukkan enrollment key
