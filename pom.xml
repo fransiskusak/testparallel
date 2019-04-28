@@ -132,28 +132,29 @@
                     <includes>
                         <include>**/acceptancetest/*.java</include>
 
-                        <!--<include>**/Logout*.java</include>-->
-                        <!--<include>**/Login*.java</include>-->
-                        <!--<include>**/LoginInvalid*.java</include>-->
-                        <!--<include>**/MendaftarAkunElokInvalid*.java</include>-->
-                        <!--<include>**/*MencariCourse.java</include>-->
 
-                        <!--mengunenroll makul big data dulu-->
-                        <!--<include>**/*MengenrollTanpaEnrollmentKey.java</include>-->
+                        <include>**/Login*.java</include>
+                        <include>**/Logout*.java</include>
+                        <include>**/LoginInvalid*.java</include>
+                        <include>**/MendaftarAkunElokInvalid*.java</include>
+                        <include>**/*MencariCourse.java</include>
 
-                        <!--diubah nama profilnya dulu-->
-                        <!--<include>**/MengeditProfileValid*.java</include>-->
-                        <!--dibenerin nama di profilnya-->
-                        <!--<include>**/MelihatProfil*.java</include>-->
+                        <include>**/*MengenrollTanpaEnrollmentKey.java</include>
 
+                        <include>**/*MengenrollDenganEnrollmentKeyInvalid.java</include>
                         <include>**/*MengenrollDenganEnrollmentKeyValid.java</include>
-                        <!--<include>**/MengaksesTugas*.java</include>-->
 
-                        <!--<include>**/MengeditProfileInvalid*.java</include>-->
-                        <!--<include>**/*MelihatSemuaMatakuliah.java</include>-->
-                        <!--<include>**/*MelihatSemuaMatakuliahYangDiambil.java</include>-->
-                        <!--<include>**/*MelakukanUnenroll.java</include>-->
-                        <!--<include>**/*MengenrollDenganEnrollmentKeyInvalid.java</include>-->
+                        <include>**/MengeditProfileInvalid*.java</include>
+                        <include>**/MengeditProfileValid*.java</include>
+                        <include>**/MelihatProfil*.java</include>
+                        <include>**/*MelihatSemuaMatakuliah.java</include>
+                        <include>**/*MelihatSemuaMatakuliahYangDiambil.java</include>
+                        <include>**/*MelakukanUnenroll.java</include>
+
+                        <include>**/MendaftarAkunElokValid*.java</include>
+                        <include>**/MengeditPasswordValid*.java</include>
+                        <!--bikin akun baru -->
+                        <!--<include>**/MengaksesTugas*.java</include>-->
 
 
                         <include>**/*Test.java</include>
@@ -164,7 +165,7 @@
                         <include>**/tests/*.java</include>
                     </includes>
                     <forkCount>1</forkCount>
-                    <reuseForks>false</reuseForks>
+                    <reuseForks>true</reuseForks>
                     <!--<threadCount>1</threadCount>-->
                 </configuration>
                 <executions>

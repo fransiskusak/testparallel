@@ -2,14 +2,14 @@ Scenario: Mendaftarkan akun eLOK
 Given Pengguna berada pada Homepage e-LOK
 When Pengguna mengeklik tombol register
 When Pengguna mengklik textbox Username
-When Pengguna memasukkan username 'andi09876543'
+When Pengguna memasukkan username 'andiTe002'
 When Pengguna mengeklik lock password
 When Pengguna mengklik textbox Password
 When Pengguna memasukkan password 'Andiii-09'
 When Pengguna mengeklik textbox Email
-When Pengguna memasukkan Email 'andi09876543@andi.com'
+When Pengguna memasukkan Email 'andiTe002@andi.com'
 When Pengguna mengeklik textbox Email (again)
-When Pengguna memasukkan Email (again) 'andi09876543@andi.com'
+When Pengguna memasukkan Email (again) 'andiTe002@andi.com'
 When Pengguna mengeklik textbox First name
 When Pengguna memasukkan First name 'Andi'
 When Pengguna mengeklik textbox Surname

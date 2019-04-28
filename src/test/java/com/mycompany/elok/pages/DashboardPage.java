@@ -114,6 +114,7 @@ public class DashboardPage extends PageObject {
 
 
     @FindBy(xpath = "html/body/div[1]/div[2]/div/div[2]/div/div/section/div/div[2]/div/div/div[2]/div[1]/div[1]/a")
+//    @FindBy(xpath = "//*[@id=\"region-main\"]/div/div[2]/div/div/div[2]/div[1]/div[1]/a")
     private WebElementFacade sampleMakulJarkom;
 
     public WebElementFacade lihatSemuaMatakuliah() { return sampleMakulJarkom;}
