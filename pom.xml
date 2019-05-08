@@ -14,8 +14,8 @@
         <serenity.version>1.2.2-rc.1</serenity.version>
         <!--default <serenity.jbehave.version>1.18.0</serenity.jbehave.version>-->
         <serenity.jbehave.version>1.13.0</serenity.jbehave.version>
-        <webdriver.driver>firefox</webdriver.driver>
-        <!--<webdriver.driver>chrome</webdriver.driver>-->
+        <!--<webdriver.driver>firefox</webdriver.driver>-->
+        <webdriver.driver>chrome</webdriver.driver>
         <!--<webdriver.driver>phantomjs</webdriver.driver>-->
     </properties>
 
@@ -130,33 +130,25 @@
                         <webdriver.driver>${webdriver.driver}</webdriver.driver>
                     </systemPropertyVariables>
                     <includes>
-                        <include>**/acceptancetest/*.java</include>
+                        <!--<include>**/acceptancetest/*.java</include>-->
 
-
+                        <include>**/*MencariCourse.java</include>
+                        <include>**/*MengenrollDenganEnrollmentKeyInvalid.java</include>
+                        <include>**/*MengenrollTanpaEnrollmentKey.java</include>
+                        <include>**/*MengenrollDenganEnrollmentKeyValid.java</include>
+                        <include>**/MelihatProfil*.java</include>
                         <include>**/Login*.java</include>
                         <include>**/Logout*.java</include>
                         <include>**/LoginInvalid*.java</include>
                         <include>**/MendaftarAkunElokInvalid*.java</include>
-                        <include>**/*MencariCourse.java</include>
-
-                        <include>**/*MengenrollTanpaEnrollmentKey.java</include>
-
-                        <include>**/*MengenrollDenganEnrollmentKeyInvalid.java</include>
-                        <include>**/*MengenrollDenganEnrollmentKeyValid.java</include>
-
-                        <include>**/MengeditProfileInvalid*.java</include>
-                        <include>**/MengeditProfileValid*.java</include>
-                        <include>**/MelihatProfil*.java</include>
-                        <include>**/*MelihatSemuaMatakuliah.java</include>
                         <include>**/*MelihatSemuaMatakuliahYangDiambil.java</include>
-                        <include>**/*MelakukanUnenroll.java</include>
-
+                        <include>**/MengeditProfileValid*.java</include>
                         <include>**/MendaftarAkunElokValid*.java</include>
                         <include>**/MengeditPasswordValid*.java</include>
+                        <include>**/*MelihatSemuaMatakuliah.java</include>
+                        <include>**/*MelakukanUnenroll.java</include>
                         <!--bikin akun baru -->
                         <!--<include>**/MengaksesTugas*.java</include>-->
-
-
                         <include>**/*Test.java</include>
                         <!--<include>**/*TestSuite.java</include>-->
                         <include>**/Test*.java</include>
