@@ -15,8 +15,8 @@ When Pengguna mengeklik Change password
 When Pengguna mengeklik textbox Current password
 When Pengguna memasukkan 'Elokelok25,' pada textbox Current password
 When Pengguna mengeklik textbox New password
-When Pengguna memasukkan 'Elokelok24.' pada textbox New password
+When Pengguna memasukkan 'Elokelok01,' pada textbox New password
 When Pengguna mengeklik textbox New password (again)
-When Pengguna memasukkan 'Elokelok24.' pada textbox New password (again)
+When Pengguna memasukkan 'Elokelok01,' pada textbox New password (again)
 When Pengguna mengeklik tombol Save changes
 Then Pengguna akan melihat pemberitahuan 'Password has been changed'
