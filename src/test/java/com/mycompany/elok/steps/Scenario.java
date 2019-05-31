@@ -70,7 +70,7 @@ public class Scenario {
 
 //////////////////////////////ENROLL ENROLLMENT KEY/////////////////////////////////
 
-    @When("Pengguna mengeklik judul matakuliah Jaringan Komputer")
+    @When("Pengguna mengeklik judul matakuliah")
     public void penggunaMengeklikJaringanKomputer(){endUser.mengeklikTulisanJarKom();}
 
     @When("Pengguna mengeklik textbox untuk memasukkan enrollment key")
@@ -375,13 +375,165 @@ public class Scenario {
     public void penggunaAkanMelihatPemberitahuanBerhasil(String passwordChanged){endUser.akanMelihatNotifikasiPerubahanPassword(passwordChanged);}
 
 
+/////////////////////////////////////////ADD NEW COURSE/////////////////////////
+
+    @When("Pengguna mengeklik tombol Add New Course")
+    public void penggunaMengeklikAddNewCourse() {endUser.mengeklikAddNewCourse();}
+
+    @When("Pengguna mengeklik textbox Course full name")
+    public void penggunaMengeklikCoursefullname(){endUser.mengeklikTextboxCourseFullname();}
+
+    @When("Pengguna mengisi textbox Course full name dengan nama '$namafull'" )
+    public void penggunaMengisiTextboxCoursefullname(String namafull) {endUser.mengisiTextboxCoursefullname(namafull);}
+
+    @When("Pengguna mengeklik textbox Course short name")
+    public void penggunaMengeklikTextboxCourseshortname(){endUser.mengeklikTextboxCourseshortname();}
+
+    @When("Pengguna mengisi textbox Course short name dengan nama '$namashort'")
+    public void penggunaMengisiCourseshortname(String namashort) {endUser.mengisiTextboxCourseshortname(namashort);}
+
+    @When("Pengguna mengeklik tombol Save and Display")
+    public void penggunaMengeklikSave(){endUser.mengeklikSave();}
+
+    @Then("Pengguna akan melihat error '$Short name is already used for another course'")
+    public void penggunaMelihatNamaMatakuliah(String error ){endUser.akanMelihatCourseError(error);}
+
+////////////////////////////////////////ADD NEW ASSIGNMENT/////////////////////////////////////////////
+
+    @When("Pengguna mengeklik enter course")
+    public void penggunaMengeklikEnterCourse(){endUser.mengeklikEnterCourse();}
+
+    @When("Pengguna mengeklik tombol hidupkan mode edit")
+    public void penggunaMengeklikTombolHidupkanModeEdit(){endUser.mengeklikTombolHidupkanModeEdit();}
+
+
+    @When("Pengguna mengeklik nama matakuliah")
+    public void penggunaMengeklikNamaMatakuliah() {endUser.mengeklikmakul();}
+
+
+    @When("Pengguna mengeklik tombol tambahkan sebuah aktifitas tugas")
+    public void penggunaMengeklikTombolTambahkanSebuahAktifitasTugas(){endUser.mengeklikTambahkanAktifitasTugas();}
+
+    @When("Pengguna mengeklik tombol assignment")
+    public void penggunaMengeklikTombolAssignment(){endUser.mengeklikAssignment();}
+
+    @When("Pengguna mengeklik tombol tambah")
+    public void penggunaMengeklikTombolTambah(){endUser.mengeklikTambah();}
+
+    @When("Pengguna mengeklik textbox assignment name")
+    public void penggunaMengeklikTextboxAssignmentName(){endUser.mengeklikBoxAssignmentName();}
+
+    @When("Pengguna mengetik '$assignmentname' pada textbox assignment name")
+    public void penggunaMengetikPadaTextboxAssignmentName(String assignmentname) {endUser.mengisiAssignmentName(assignmentname);}
+
+    @When("Pengguna mengeklik tombol Simpan dan Tampilkan")
+    public void penggunaMengeklikTombolSimpandanTampilkan(){endUser.mengeklikSimpandanTampilkan();}
+
+    @When("Pengguna mengeklik tombol matakuliah")
+    public void penggunaMengeklikTombolMakul(){endUser.mengeklikMakul();}
+
+
+    @Then("Pengguna menemukan '$listtugas' pada daftar tugas")
+    public void penggunaMenemukanPadaDaftarTugas(String listtugas){endUser.akanMelihatListTugas(listtugas);}
+
+
+
+////////////////////////////////////////////////////ADD MATERI//////////////////////////////////////////////////////////////
+
+    @When("Pengguna mengeklik tombol tambahkan sebuah aktifitas")
+    public void penggunaMengeklikTombolTambahkanSebuahAktifitas(){endUser.mengeklikTambahkanAktifitas();}
+
+    @When("Pengguna mengeklik tombol file")
+    public void penggunaMengeklikTombolFile(){endUser.mengeklikFile();}
+
+    @When("Pengguna mengeklik textbox nama")
+    public void penggunaMengeklikTextboxNama(){endUser.mengeklikNamaFile();}
+
+    @When("Pengguna mengisi nama materi dengan '$nama'")
+    public void penggunaMengisiNamaMateri(String nama){endUser.isiNama(nama);}
+
+    @When("Pengguna mengeklik tombol add")
+    public void penggunaMengeklikAdd(){endUser.klikAdd();}
+
+    @Then("Pengguna menemukan 'PengantarSoftwareQuality' pada daftar materi")
+    public void penggunaMenemukanMateriPadaDaftarMateri(){}
 
 
 
 
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//    @AfterScenario
+    @When("Pengguna mengeklik Upload a file")
+    public void penggunaMengeklikUploadAFile(){endUser.mengeklikUploadAFile2();}
+
+    @When("Pengguna mengeklik Browse")
+    public void penggunaMengeklikBrowse(){endUser.mengeklikBrowse2();}
+
+    @When("Pengguna mengeklik  upload this File")
+    public void penggunaMengeklikUploadThisFile(){endUser.mengeklikUploadThisFile2();}
+
+//    @When("Pengguna mengeklik tombol Recent File")
+//    public void penggunaMengeklikTombolRecentFile(){endUser.mengeklikRecentFile();}
+//
+//    @When("Pengguna mengeklik file yang sudah terupload")
+//    public void penggunaMengeklikFileYangSudahTerupload(){endUser.mengeklikFileTerupload();}
+//
+//    @When("Pengguna mengeklik tombol Select this file")
+//    public void penggunaMengeklikTombolSelectThisFile(){endUser.mengeklikSelectThisFile();}
+//
+//    @When("Pengguna mengeklik tombol overwrite")
+//    public void penggunaMengeklikTombolOverwrite() {endUser.mengeklikOverwrite();}
+
+    @When("Pengguna mengeklik Simpan")
+    public void penggunaMengeklikSaveChangesFile(){endUser.mengeklikSaveChanges2();}
+
+    @Then("Pengguna menemukan '$filestatus' pada daftar materi")
+    public void penggunaMelihatFileSubmitted(String filestatus){endUser.akanMelihatSubmissionStatus2(filestatus);}
+
+//////////////////////////////////////////////ADD FORUM////////////////////////////////////////
+
+
+    @When("Pengguna mengeklik tambahkan aktifitas atau sumber daya")
+    public void penggunaMengeklikTambahkanAktifitas(){endUser.mengeklikTambahAktifitas();}
+
+    @When("Pengguna mengeklik tombol Forum")
+    public void penggunaMengeklikTombolForum(){endUser.mengeklikTombolForum();}
+
+    @When("Pengguna mengeklik textbox Forum name")
+    public void penggunaMengeklikTextboxForumName(){endUser.mengeklikForumName();}
+
+    @When("Pengguna mengetik '$forumname' pada textbox Forum name")
+    public void penggunaMengetikPadaForumName(String forumname) {endUser.mengisiForumName(forumname);}
+
+    @Then("Pengguna menemukan '$hasilforum' pada daftar Forum")
+    public void penggunaMenemukanForumYangTelahDibuat(String hasilforum) {endUser.akanLihatForumYangTelahDibuat(hasilforum);}
+
+//////////////////////////////////////////MENAMBAHKAN DESKRIPSI PEMBELAJARAN///////////
+
+
+    @When("Pengguna mengeklik edit")
+    public void penggunaMengeklikEdit(){endUser.mengeklikEdit();}
+
+    @When("Pengguna mengeklik edit section")
+    public void penggunaMengeklikEditSection(){endUser.mengeklikEditSection();}
+
+    @When("Pengguna mengeklik textbox description")
+    public void penggunaMengeklikTextboxDescription(){endUser.mengeklikTextBoxDescription();}
+
+    @When("Pengguna mengisi textbox description dengan '$desc'")
+    public void penggunaMengisiTextboxDescription(String desc) {endUser.mengisiTextboxDescription(desc);}
+
+    @Then("Pengguna menemukan '$desk' pada Deksripsi Pembelajaran")
+    public void penggunaMenemukanDeksripsiPembelajaran(String desk){endUser.akanMelihatDeskripsiPembelajaran(desk);}
+
+/////////////////////////////////////////LOGIN AS DOSEN/////////////////////////////
+
+    @When("Pengguna mengeklik tombol switch role")
+    public void penggunaMengeklikTombolSwitchRole(){endUser.mengeklikSwitchRole();}
+
+    @Then("Pengguna akan melihat menu '$sr'")
+    public void penggunaAkanMelihatJudulMenuSwitchRole(String sr){endUser.akanLihatJudulMenuSwitchRole(sr);}
+
+    //    @AfterScenario
 //    public void afterScenario() {
 //        driver.quit();
 //    }

@@ -9,13 +9,14 @@ public class EndUserSteps extends ScenarioSteps {
     HomePage homePage;
     DashboardPage dashboardPage;
     SearchResultPage searchResultPage;
-    CourseHomePage  courseHomePage;
-    RegisterPage    registerPage;
+    CourseHomePage courseHomePage;
+    RegisterPage registerPage;
     ErrorLoginPage errorLoginPage;
     ProfilePage profilePage;
     SampleCoursePage sampleCoursePage;
     UserAccountPage userAccountPage;
-//////////////////////////////LOGIN/////////////////////////////
+
+    //////////////////////////////LOGIN/////////////////////////////
     @Step
     public void beradaDiHomepage() {
         homePage.open();
@@ -48,9 +49,10 @@ public class EndUserSteps extends ScenarioSteps {
 
     @Step
     public void akanLihatNamaPengguna(String nama) {
-        homePage.lihatNama().shouldContainText(nama);}
+        homePage.lihatNama().shouldContainText(nama);
+    }
 
-/////////////////////////////////LOGIN INVALID PASSWORD//////////////////
+    /////////////////////////////////LOGIN INVALID PASSWORD//////////////////
     @Step
     public void mengetikInvalidPassword(String invalidpassword) {
         homePage.ketikInvalidPassword(invalidpassword);
@@ -68,7 +70,7 @@ public class EndUserSteps extends ScenarioSteps {
     }
 
 
-/////////////////////////////////CARI COURSE VALID/////////////////////////////
+    /////////////////////////////////CARI COURSE VALID/////////////////////////////
     @Step
     public void beradaDiDashboardpage() {
         dashboardPage.open();
@@ -90,62 +92,82 @@ public class EndUserSteps extends ScenarioSteps {
     }
 
     @Step
-    public void menemukanTulisanNamaMakulnya(String namaMakulnya) { searchResultPage.lihatHasilSearchCourse().shouldContainText(namaMakulnya);}
+    public void menemukanTulisanNamaMakulnya(String namaMakulnya) {
+        searchResultPage.lihatHasilSearchCourse().shouldContainText(namaMakulnya);
+    }
 
 
-        //String bodyText = getDriver().findElement(By.tagName("body")).getText();
-        //Assert.assertTrue("Text not found!", bodyText.contains("Big Data"));
+    //String bodyText = getDriver().findElement(By.tagName("body")).getText();
+    //Assert.assertTrue("Text not found!", bodyText.contains("Big Data"));
 //dikomen 30 Nov di IF
-        //String result = dashboardPage.temukanKeyword();
-        //assertThat("course is not found", result , "Big Data");
+    //String result = dashboardPage.temukanKeyword();
+    //assertThat("course is not found", result , "Big Data");
 
 
-
-
-//////////////////////////////////LOGOUT/////////////////////////////
+    //////////////////////////////////LOGOUT/////////////////////////////
     @Step
-    public void mengeklikNama() {homePage.klikNama();}
-
-    @Step
-    public void mengeklikLogout() {homePage.klikLogout();}
+    public void mengeklikNama() {
+        homePage.klikNama();
+    }
 
     @Step
-    public void akanLihatTulisan(String isiTentangElok) {homePage.lihatTulisan().shouldContainText(isiTentangElok);}
-
-
-
-
-//////////////////////////////////ENROLE COURSE/////////////////////
-    @Step
-    public void mengeklikTulisanNamaMakul() {searchResultPage.klikTulisanNamaMakul();}
+    public void mengeklikLogout() {
+        homePage.klikLogout();
+    }
 
     @Step
-    public void mengeklikEnroll(){courseHomePage.enrollBigData();}
+    public void akanLihatTulisan(String isiTentangElok) {
+        homePage.lihatTulisan().shouldContainText(isiTentangElok);
+    }
+
+
+    //////////////////////////////////ENROLE COURSE/////////////////////
+    @Step
+    public void mengeklikTulisanNamaMakul() {
+        searchResultPage.klikTulisanNamaMakul();
+    }
 
     @Step
-    public void  akanLihatTulisanUnenroll(String tlsunenroll) {courseHomePage.temukanUnenroll().shouldContainText(tlsunenroll);}
+    public void mengeklikEnroll() {
+        courseHomePage.enrollBigData();
+    }
+
+    @Step
+    public void akanLihatTulisanUnenroll(String tlsunenroll) {
+        courseHomePage.temukanUnenroll().shouldContainText(tlsunenroll);
+    }
 
 
 ///////////////////////////////////ENROLLMENT KEY/////////////////////////
 
-    @Step
-    public void mengeklikTulisanJarKom() {searchResultPage.klikTulisanNamaMakulJarkom();}
 
     @Step
-    public void mengeklikTextboxEnrollmentKey(){courseHomePage.klikTextboxEnrollKey();}
+    public void mengeklikTulisanJarKom() {
+        searchResultPage.klikTulisanNamaMakulJarkom();
+    }
 
     @Step
-    public void mengetikEnrollmentKey(String key){courseHomePage.ketikEnrollmentKey(key);}
+    public void mengeklikTextboxEnrollmentKey() {
+        courseHomePage.klikTextboxEnrollKey();
+    }
 
     @Step
-    public void mengeklikTombolEnrollMe(){courseHomePage.klikEnrollMeJarkom();}
+    public void mengetikEnrollmentKey(String key) {
+        courseHomePage.ketikEnrollmentKey(key);
+    }
 
+    @Step
+    public void mengeklikTombolEnrollMe() {
+        courseHomePage.klikEnrollMeJarkom();
+    }
 
 
 ////////////////////////////////////INVALID ENROLLMENT KEY/////////////////////////////////////
 
     @Step
-    public void melihatErorEnroll(String erorenroll){courseHomePage.akanLihatErorEnroll().shouldContainText(erorenroll);}
+    public void melihatErorEnroll(String erorenroll) {
+        courseHomePage.akanLihatErorEnroll().shouldContainText(erorenroll);
+    }
 
 ////////////////////////////////MELIHAT PROFIL///////////////////////////
 
@@ -155,14 +177,19 @@ public class EndUserSteps extends ScenarioSteps {
     }
 
     @Step
-    public void mengeklikNama2() {homePage.klikNama();}
+    public void mengeklikNama2() {
+        homePage.klikNama();
+    }
 
     @Step
-    public void mengeklikTombolProfil() {dashboardPage.klikTombolProfil();}
+    public void mengeklikTombolProfil() {
+        dashboardPage.klikTombolProfil();
+    }
 
     @Step
-    public void akanLihatProfilnya(String deskripsiProfil) {dashboardPage.lihatProfil().shouldContainText(deskripsiProfil);}
-
+    public void akanLihatProfilnya(String deskripsiProfil) {
+        dashboardPage.lihatProfil().shouldContainText(deskripsiProfil);
+    }
 
 
 //////////////////////////////////MELIHAT GRADE///////////////////////////
@@ -173,10 +200,14 @@ public class EndUserSteps extends ScenarioSteps {
     }
 
     @Step
-    public void mengeklikGrade() {dashboardPage.klikTombolGrade();}
+    public void mengeklikGrade() {
+        dashboardPage.klikTombolGrade();
+    }
 
     @Step
-    public void akanLihatGrade() {dashboardPage.lihatGrade();}
+    public void akanLihatGrade() {
+        dashboardPage.lihatGrade();
+    }
 
 
 /////////////////////////////////MELIHAT MESSAGES//////////////////////////
@@ -187,146 +218,233 @@ public class EndUserSteps extends ScenarioSteps {
     }
 
     @Step
-    public void mengeklikMessages(){dashboardPage.klikTombolMessages();}
+    public void mengeklikMessages() {
+        dashboardPage.klikTombolMessages();
+    }
 
     @Step
     public void akanLihatMessages(String isimessages) {
-        dashboardPage.lihatMessages().shouldContainText(isimessages);}
+        dashboardPage.lihatMessages().shouldContainText(isimessages);
+    }
 
 //////////////////////////MELIHAT SEMUA MATAKULIAH///////////////////////
 
     @Step
-    public void mengeklikMatakuliah(){dashboardPage.klikTombolMatakuliah();}
+    public void mengeklikMatakuliah() {
+        dashboardPage.klikTombolMatakuliah();
+    }
 
     @Step
-    public void mengeklikMOOC(){dashboardPage.klikTombolMOOC();}
+    public void mengeklikMOOC() {
+        dashboardPage.klikTombolMOOC();
+    }
 
     @Step
-    public void akanLihatSampleMatakuliah(String sampleJarkom) {dashboardPage.lihatSemuaMatakuliah().shouldContainText(sampleJarkom);}
+    public void akanLihatSampleMatakuliah(String sampleJarkom) {
+        dashboardPage.lihatSemuaMatakuliah().shouldContainText(sampleJarkom);
+    }
 
 ///////////////////////////REGISTER SEBAGAI MAHASISWA/////////////////////
 
     @Step
-    public void mengeklikTombolRegister(){homePage.klikRegister();}
+    public void mengeklikTombolRegister() {
+        homePage.klikRegister();
+    }
 
     @Step
-    public void mengeklikTextboxUsername(){registerPage.klikTombolUsername();}
+    public void mengeklikTextboxUsername() {
+        registerPage.klikTombolUsername();
+    }
 
     @Step
-    public void memasukkanUsername(String registerusername){registerPage.masukkanUsername(registerusername);}
+    public void memasukkanUsername(String registerusername) {
+        registerPage.masukkanUsername(registerusername);
+    }
 
     @Step
-    public void mengeklikLockPassword(){registerPage.klikLockPassword();}
+    public void mengeklikLockPassword() {
+        registerPage.klikLockPassword();
+    }
 
     @Step
-    public void mengeklikTextboxPassword(){registerPage.klikBoxPassword();}
+    public void mengeklikTextboxPassword() {
+        registerPage.klikBoxPassword();
+    }
 
     @Step
-    public void memasukkanPassword(String registerpassword){registerPage.masukkanPassword(registerpassword);}
+    public void memasukkanPassword(String registerpassword) {
+        registerPage.masukkanPassword(registerpassword);
+    }
 
     @Step
-    public void mengeklikTextboxEmail() {registerPage.klikEmail();}
+    public void mengeklikTextboxEmail() {
+        registerPage.klikEmail();
+    }
 
     @Step
-    public void memasukkanEmail(String email){registerPage.masukkanEmail(email);}
+    public void memasukkanEmail(String email) {
+        registerPage.masukkanEmail(email);
+    }
 
     @Step
-    public void mengeklikTextboxEmailAgain(){registerPage.klikEmailAgain();}
+    public void mengeklikTextboxEmailAgain() {
+        registerPage.klikEmailAgain();
+    }
 
     @Step
-    public void memasukkanEmailAgain(String emailagain) {registerPage.masukkanEmailAgain(emailagain);}
+    public void memasukkanEmailAgain(String emailagain) {
+        registerPage.masukkanEmailAgain(emailagain);
+    }
 
     @Step
-    public void  mengeklikTextboxFirstName(){registerPage.klikFirstName();}
+    public void mengeklikTextboxFirstName() {
+        registerPage.klikFirstName();
+    }
 
     @Step
-    public void memasukkanFirstName(String firstname) {registerPage.masukkanFirstName(firstname);}
+    public void memasukkanFirstName(String firstname) {
+        registerPage.masukkanFirstName(firstname);
+    }
 
     @Step
-    public void mengeklikTextboxSurname(){registerPage.klikSurename();}
+    public void mengeklikTextboxSurname() {
+        registerPage.klikSurename();
+    }
 
     @Step
-    public void memasukkanSurname(String surename){registerPage.masukkanSurename(surename);}
+    public void memasukkanSurname(String surename) {
+        registerPage.masukkanSurename(surename);
+    }
 
     @Step
-    public void mengeklikTextboxCity(){registerPage.klikCityTown();}
+    public void mengeklikTextboxCity() {
+        registerPage.klikCityTown();
+    }
 
     @Step
-    public void memasukkanCity(String citytown) {registerPage.masukkanCityTown(citytown);}
+    public void memasukkanCity(String citytown) {
+        registerPage.masukkanCityTown(citytown);
+    }
 
     @Step
-    public void mengeklikTextboxCountry(){registerPage.klikDropdownCountry();}
+    public void mengeklikTextboxCountry() {
+        registerPage.klikDropdownCountry();
+    }
 
     @Step
-    public void menselectNegaraIndonesia(String negara){registerPage.selectNegara(negara);}
+    public void menselectNegaraIndonesia(String negara) {
+        registerPage.selectNegara(negara);
+    }
 
     @Step
-    public void mengeklikCreateAccount(){registerPage.klikCreateAccount();}
+    public void mengeklikCreateAccount() {
+        registerPage.klikCreateAccount();
+    }
 
     @Step
-    public void akanMelihatKonfirmasiRegistrasi(String berhasil) {registerPage.akanLihatKonfirmasi().shouldContainText(berhasil);}
+    public void akanMelihatKonfirmasiRegistrasi(String berhasil) {
+        registerPage.akanLihatKonfirmasi().shouldContainText(berhasil);
+    }
 
 
     ////////////////////////INVALID REGISTER///////////////////////////////////////////////////////////////////////////
 
     @Step
-    public void akanLihatEror(String eror){registerPage.cekErorUsername().shouldContainText(eror);}
+    public void akanLihatEror(String eror) {
+        registerPage.cekErorUsername().shouldContainText(eror);
+    }
 
     ///////////////////////MENGEDIT PROFIL/////////////////////
 
     @Step
-    public void mengeklikTombolEditProfile(){profilePage.klikTombolEditProfile();}
+    public void mengeklikTombolEditProfile() {
+        profilePage.klikTombolEditProfile();
+    }
 
     @Step
-    public void mengeklikFieldFirstNameEdit() {profilePage.klikBoxFirstNameEdit();}
+    public void mengeklikFieldFirstNameEdit() {
+        profilePage.klikBoxFirstNameEdit();
+    }
 
     @Step
-    public void memasukkanFirstNameEdit(String firstnameedit){profilePage.masukkanBoxFirstName(firstnameedit);}
+    public void memasukkanFirstNameEdit(String firstnameedit) {
+        profilePage.masukkanBoxFirstName(firstnameedit);
+    }
 
     @Step
-    public void mengeklikFieldSurnameEdit(){profilePage.klikBoxSurnameEdit();}
+    public void mengeklikFieldSurnameEdit() {
+        profilePage.klikBoxSurnameEdit();
+    }
 
     @Step
-    public void memasukkanFieldSurnameEdit(String surnameedit){profilePage.masukkanBoxSurname(surnameedit);}
+    public void memasukkanFieldSurnameEdit(String surnameedit) {
+        profilePage.masukkanBoxSurname(surnameedit);
+    }
 
     @Step
-    public void mengeklikFieldEmailEdit(){profilePage.klikBoxEmailAddressEdit();}
+    public void mengeklikFieldEmailEdit() {
+        profilePage.klikBoxEmailAddressEdit();
+    }
 
     @Step
-    public void memasukkanFieldEmailEdit(String emailedit){profilePage.masukkanEmailAddress(emailedit);}
+    public void memasukkanFieldEmailEdit(String emailedit) {
+        profilePage.masukkanEmailAddress(emailedit);
+    }
 
     @Step
-    public void mengeklikFieldEmailDisplay(){profilePage.klikBoxEmailDisplayEdit();}
+    public void mengeklikFieldEmailDisplay() {
+        profilePage.klikBoxEmailDisplayEdit();
+    }
 
     @Step
-    public void memilihFieldEmailDisplay(){profilePage.klikIsiSelectboxEmailDisplayEdit();}
+    public void memilihFieldEmailDisplay() {
+        profilePage.klikIsiSelectboxEmailDisplayEdit();
+    }
 
     @Step
-    public void mengeklikFieldCityEdit(){profilePage.klikBoxCityEdit();}
+    public void mengeklikFieldCityEdit() {
+        profilePage.klikBoxCityEdit();
+    }
 
     @Step
-    public void memasukkanFieldCityEdit(String cityedit){profilePage.masukkanCity(cityedit);}
+    public void memasukkanFieldCityEdit(String cityedit) {
+        profilePage.masukkanCity(cityedit);
+    }
 
     @Step
-    public void mengeklikFieldCountryEdit(){profilePage.klikBoxCountryEdit();}
+    public void mengeklikFieldCountryEdit() {
+        profilePage.klikBoxCountryEdit();
+    }
 
     @Step
-    public void memilihIsiFieldCountryEdit(){profilePage.klikSelectIsiBoxCountry();}
+    public void memilihIsiFieldCountryEdit() {
+        profilePage.klikSelectIsiBoxCountry();
+    }
 
     @Step
-    public void mengeklikFieldTimezoneEdit(){profilePage.klikBoxTimezoneEdit();}
+    public void mengeklikFieldTimezoneEdit() {
+        profilePage.klikBoxTimezoneEdit();
+    }
 
     @Step
-    public void memilihIsiTimezoneJakarta(){profilePage.klikSelectIsiBoxTimezone();}
+    public void memilihIsiTimezoneJakarta() {
+        profilePage.klikSelectIsiBoxTimezone();
+    }
 
     @Step
-    public void mengelikFieldDescriptionEdit(){profilePage.klikBoxDescriptionEdit();}
+    public void mengelikFieldDescriptionEdit() {
+        profilePage.klikBoxDescriptionEdit();
+    }
 
     @Step
-    public void memasukkanFieldDescriptionEdit(String descriptionedit){profilePage.masukkanDescription(descriptionedit);}
+    public void memasukkanFieldDescriptionEdit(String descriptionedit) {
+        profilePage.masukkanDescription(descriptionedit);
+    }
 
     @Step
-    public void mengeklikTombolUpdateProfil(){profilePage.klikTombolUpdateProfil();}
+    public void mengeklikTombolUpdateProfil() {
+        profilePage.klikTombolUpdateProfil();
+    }
 
     @Step
     public void akanLihatNamaBaruPengguna(String namaakunteredit) {
@@ -334,106 +452,388 @@ public class EndUserSteps extends ScenarioSteps {
     }
 
     @Step
-    public void akanLihatErorEditEmail(String eroreditemail) {profilePage.temukanErorEmail().shouldContainText(eroreditemail);}
+    public void akanLihatErorEditEmail(String eroreditemail) {
+        profilePage.temukanErorEmail().shouldContainText(eroreditemail);
+    }
 
     ////////////////////UNENROLL////////////////////////////////////////
 
     @Step
-    public void mengeklikUnenroll(){courseHomePage.unenroll();}
+    public void mengeklikUnenroll() {
+        courseHomePage.unenroll();
+    }
 
     @Step
-    public void mengeklikContinue() {courseHomePage.klikContinue();}
+    public void mengeklikContinue() {
+        courseHomePage.klikContinue();
+    }
 
     @Step
     public void tidakMenemukanListMatakuliah(String listbigdata) {
         //courseHomePage.tidakMenemukanListMatakuliah().shouldNotContainText(listbigdata);
-        }
-
+    }
 
 
     ////////////////////////////////MENGAKSES TUGAS///////////////////////////////////////////////////////
 
     @Step
-    public void beradadiHomePageCourse(){sampleCoursePage.open();}
+    public void beradadiHomePageCourse() {
+        sampleCoursePage.open();
+    }
 
     @Step
-    public void mengeklikTugasAwal(){sampleCoursePage.klikTugasAwal();}
+    public void mengeklikTugasAwal() {
+        sampleCoursePage.klikTugasAwal();
+    }
 
     @Step
-    public void mengeklikAddSubmission(){sampleCoursePage.klikAddSubsmission();}
+    public void mengeklikAddSubmission() {
+        sampleCoursePage.klikAddSubsmission();
+    }
 
     @Step
-    public void mengeklikAdd(){sampleCoursePage.klikAdd();}
+    public void mengeklikAdd() {
+        sampleCoursePage.klikAdd();
+    }
 
     @Step
-    public void mengeklikUploadAFile(){sampleCoursePage.klikUploadAFile();}
+    public void mengeklikUploadAFile() {
+        sampleCoursePage.klikUploadAFile();
+    }
 
     @Step
-    public void mengeklikBrowse(){sampleCoursePage.klikBrowse();}
+    public void mengeklikBrowse() {
+        sampleCoursePage.klikBrowse();
+    }
 
     @Step
-    public void mengeklikUploadThisFile(){sampleCoursePage.klikUploadThisFile();}
+    public void mengeklikUploadThisFile() {
+        sampleCoursePage.klikUploadThisFile();
+    }
 
     @Step
-    public void mengeklikRecentFile(){sampleCoursePage.klikRecentFile();}
+    public void mengeklikRecentFile() {
+        sampleCoursePage.klikRecentFile();
+    }
 
     @Step
-    public void mengeklikFileTerupload(){sampleCoursePage.klikFileTerselect();}
+    public void mengeklikFileTerupload() {
+        sampleCoursePage.klikFileTerselect();
+    }
 
     @Step
-    public void mengeklikSelectThisFile(){sampleCoursePage.klikSelectThisFile();}
+    public void mengeklikSelectThisFile() {
+        sampleCoursePage.klikSelectThisFile();
+    }
 
     @Step
-    public void mengeklikOverwrite() {sampleCoursePage.klikOverwrite();}
+    public void mengeklikOverwrite() {
+        sampleCoursePage.klikOverwrite();
+    }
 
     @Step
-    public void mengeklikSaveChanges(){sampleCoursePage.klikSaveChanges();}
+    public void mengeklikSaveChanges() {
+        sampleCoursePage.klikSaveChanges();
+    }
 
     @Step
-    public void akanMelihatSubmissionStatus(String submissionstatus){sampleCoursePage.akanLihatSubmissionStatus().shouldContainText(submissionstatus);}
+    public void akanMelihatSubmissionStatus(String submissionstatus) {
+        sampleCoursePage.akanLihatSubmissionStatus().shouldContainText(submissionstatus);
+    }
 
 //    @Step
 //    public void akanMelihatMenuSubmission(String tulisanmenusubmission){sampleCoursePage.lihatMenuFileSubmission().shouldContainText(tulisanmenusubmission);}
 
-////////////////////////////////////LIHAT SEMUA MATAKULIAH YANG DIAMBIL//////////////////////////////////////
+    ////////////////////////////////////LIHAT SEMUA MATAKULIAH YANG DIAMBIL//////////////////////////////////////
     @Step
-    public void akanMelihatMatakuliahYangDiambil(String judulmakul){dashboardPage.lihatMakulSedangDiambil().shouldContainText(judulmakul);}
+    public void akanMelihatMatakuliahYangDiambil(String judulmakul) {
+        dashboardPage.lihatMakulSedangDiambil().shouldContainText(judulmakul);
+    }
 
 
-   ////////////////////////////////////PENGGANTIAN PASSWORD//////////////////////////////////////////////////
-
-    @Step
-    public void mengeklikPreferences(){userAccountPage.klikPreferences();}
-
+    ////////////////////////////////////PENGGANTIAN PASSWORD//////////////////////////////////////////////////
 
     @Step
-    public void mengeklikChangePassword(){userAccountPage.klikChangePassword();}
-
-
-    @Step
-    public void mengeklikTextboxCurrentPassword(){userAccountPage.klikCurrent();}
+    public void mengeklikPreferences() {
+        userAccountPage.klikPreferences();
+    }
 
 
     @Step
-    public void memasukkanCurrentPassword(String currentPassword ){userAccountPage.ketikCurrent(currentPassword);}
+    public void mengeklikChangePassword() {
+        userAccountPage.klikChangePassword();
+    }
 
 
     @Step
-    public void mengeklikTextboxNewPassword(){userAccountPage.klikNew();}
+    public void mengeklikTextboxCurrentPassword() {
+        userAccountPage.klikCurrent();
+    }
 
 
     @Step
-    public void memasukkanNewPassword(String newPassword ){userAccountPage.ketikNew(newPassword);}
+    public void memasukkanCurrentPassword(String currentPassword) {
+        userAccountPage.ketikCurrent(currentPassword);
+    }
+
 
     @Step
-    public void mengeklikTextboxNewPasswordAgain(){userAccountPage.klikNewAgain();}
+    public void mengeklikTextboxNewPassword() {
+        userAccountPage.klikNew();
+    }
+
 
     @Step
-    public void memasukkanNewPasswordAgain(String newPassAgain) {userAccountPage.ketikNewAgain(newPassAgain);}
+    public void memasukkanNewPassword(String newPassword) {
+        userAccountPage.ketikNew(newPassword);
+    }
 
     @Step
-    public void mengeklikSaveChange(){userAccountPage.klikSaveChanges();}
+    public void mengeklikTextboxNewPasswordAgain() {
+        userAccountPage.klikNewAgain();
+    }
 
     @Step
-    public void akanMelihatNotifikasiPerubahanPassword(String passwordChanged ) {userAccountPage.akanMelihatNotifikasiPenggantianPassword().shouldContainText(passwordChanged);}
+    public void memasukkanNewPasswordAgain(String newPassAgain) {
+        userAccountPage.ketikNewAgain(newPassAgain);
+    }
+
+    @Step
+    public void mengeklikSaveChange() {
+        userAccountPage.klikSaveChanges();
+    }
+
+    @Step
+    public void akanMelihatNotifikasiPerubahanPassword(String passwordChanged) {
+        userAccountPage.akanMelihatNotifikasiPenggantianPassword().shouldContainText(passwordChanged);
+    }
+
+    ////////////////////////////////////////ADD NEW COURSE////////////////////////////
+
+    @Step
+    public void mengeklikAddNewCourse() {
+        dashboardPage.klikTombolAddNewCourse();
+    }
+
+    @Step
+    public void mengeklikTextboxCourseFullname() {
+        dashboardPage.klikboxCourseFullName();
+    }
+
+    @Step
+    public void mengisiTextboxCoursefullname(String coursefullname) {
+        dashboardPage.isiNamaCourse(coursefullname);
+    }
+
+    @Step
+    public void mengeklikTextboxCourseshortname() {
+        dashboardPage.klikboxCourseShortName();
+    }
+
+    @Step
+    public void mengisiTextboxCourseshortname(String courseshortname) {
+        dashboardPage.isiCourseshortname(courseshortname);
+    }
+
+//    @Step
+//    public void mengeklikCourseCategory(){dashboardPage.klikCourseCategory();}
+
+    @Step
+    public void mengeklikSave() {
+        dashboardPage.klikTombolSave();
+    }
+
+    @Step
+    public void akanMelihatNamaMatakuliah() {
+        dashboardPage.akanLihatHasilPencarian();
+    }
+
+    @Step
+    public void akanMelihatCourseError(String error) {
+        dashboardPage.temukanErorNamaCoursename().shouldContainText(error);
+    }
+
+/////////////////////////////////////////////////////ADD NEW ASSIGNMENT//////////////////////////////////
+
+    @Step
+    public void mengeklikEnterCourse() {
+        dashboardPage.klikEnterCourse();
+    }
+
+    @Step
+    public void mengeklikTombolHidupkanModeEdit() {
+        dashboardPage.klikTombolHidupkanModeEdit();
+    }
+
+
+    @Step
+    public void mengeklikmakul(){dashboardPage.klikTblmakul();}
+
+    @Step
+    public void mengeklikTambahkanAktifitasTugas() {
+        dashboardPage.klikTambahkanAktifitasTugas();
+    }
+
+    @Step
+    public void mengeklikAssignment() {
+        dashboardPage.klikAssignment();
+    }
+
+    @Step
+    public void mengeklikTambah() {
+        dashboardPage.klikTambah();
+    }
+
+    @Step
+    public void mengeklikBoxAssignmentName() {
+        dashboardPage.klikAssignmentName();
+    }
+
+    @Step
+    public void mengisiAssignmentName(String assignmentname) {
+        dashboardPage.isiAssignmentName(assignmentname);
+    }
+
+    @Step
+    public void mengeklikSimpandanTampilkan() {
+        dashboardPage.klikSimpandanTampilkan();
+    }
+
+    @Step
+    public void mengeklikMakul() {
+        dashboardPage.klikMakul();
+    }
+
+    @Step
+    public void akanMelihatListTugas(String listtugas) {
+        dashboardPage.akanLihatListTugas().shouldContainText(listtugas);
+    }
+
+////////////////////////////////////////////////////ADD NEW MATERI///////////////////////////////////////////////////
+
+    @Step
+    public void mengeklikTambahkanAktifitas() {
+        dashboardPage.klikTambahkanAktifitas();
+    }
+
+    @Step
+    public void mengeklikFile() {
+        dashboardPage.klikFile();
+    }
+
+    @Step
+    public void mengeklikNamaFile() {
+        dashboardPage.klikNama();
+    }
+
+    @Step
+    public void isiNama(String nama) {
+        dashboardPage.isiNama(nama);
+    }
+
+    @Step
+    public void klikAdd() {
+        dashboardPage.klikAdd();
+    }
+
+
+    @Step
+    public void mengeklikUploadAFile2() {
+        dashboardPage.klikUploadAFile();
+    }
+
+    @Step
+    public void mengeklikBrowse2() {
+        dashboardPage.klikBrowse();
+    }
+
+    @Step
+    public void mengeklikUploadThisFile2() {
+        dashboardPage.klikUploadThisFile();
+    }
+
+
+    @Step
+    public void mengeklikSaveChanges2() {
+        dashboardPage.klikSaveChanges();
+    }
+
+    @Step
+    public void akanMelihatSubmissionStatus2(String submissionstatus) {
+        dashboardPage.akanLihatSubmissionStatus().shouldContainText(submissionstatus);
+    }
+
+
+    @Step
+    public void akanMelihatFileMateri() {
+    }
+
+
+    //////////////////////////////////////ADD FORUM///////////////////////////////
+    @Step
+    public void mengeklikTambahAktifitas() {
+        dashboardPage.klikTambahAktifitas();
+    }
+
+    @Step
+    public void mengeklikTombolForum() {
+        dashboardPage.klikTombolForum();
+    }
+
+    @Step
+    public void mengeklikForumName() {
+        dashboardPage.klikForumName();
+    }
+
+    @Step
+    public void mengisiForumName(String forumname) {
+        dashboardPage.isiForumName(forumname);
+    }
+
+    @Step
+    public void akanLihatForumYangTelahDibuat(String hasilforum) {
+        dashboardPage.akanLihatHasilForum().containsText(hasilforum);
+    }
+
+////////////////////////////////////////////////MENAMBAH DESKRIPSI PEMB///////////////////
+
+    @Step
+    public void mengeklikEdit() {
+        dashboardPage.klikEdit();
+    }
+
+    @Step
+    public void mengeklikEditSection() {
+        dashboardPage.klikEditSection();
+    }
+
+    @Step
+    public void mengeklikTextBoxDescription() {
+        dashboardPage.klikDescription();
+    }
+
+    @Step
+    public void mengisiTextboxDescription(String desc) {
+        dashboardPage.mengisiDescription(desc);
+    }
+
+    @Step
+    public void akanMelihatDeskripsiPembelajaran(String desk) {
+        dashboardPage.akanMelihatDeskripsiPembelajaran().containsText(desk);
+    }
+
+
+/////////////////////////////////////////LOGIN AS DOSEN/////////////////////////
+
+    @Step
+    public void mengeklikSwitchRole() {
+        dashboardPage.klikSwitchRole();
+    }
+
+
+    @Step
+    public void akanLihatJudulMenuSwitchRole(String sr) {
+        dashboardPage.akanLihatJudulMenuSitchRole().containsText(sr);
+    }
+
 }

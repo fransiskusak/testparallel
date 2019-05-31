@@ -4,8 +4,8 @@ Saya ingin enroll pada matakuliah Big Data di e-LOK
 Untuk dapat mengakses konten pembelajaran Big Data
 
 Scenario: Enroll sebuah matakuliah terbuka
-GivenStories: stories/Account/Positive/Login.story
-GivenStories: stories/Course/MencariCourseValid .story
+GivenStories: stories/Account/Positive/FLogin.story
+GivenStories: stories/Course/Positive/AMencariCourse.story
 Given Pengguna berada pada Halaman Dashboard e-LOK
 When Pengguna mengeklik textboxt Search Courses
 When Pengguna mengetik 'Big Data Komputasional'

@@ -7,8 +7,8 @@ Saya ingin mengakses Tugas pada matakuliah Jaringan Komputer di eLOK
 Sehingga dapat mengetahui apakah terdapat tugas
 
 Scenario: Mengakses dan mengumpulkan tugas pada sebuah matakuliah
-GivenStories: stories/Account/Positive/Login.story
-GivenStories: stories/Course/Positive/MengenrollDenganEnrollmentKeyValid.story
+GivenStories: stories/Account/Positive/FLogin.story
+GivenStories: stories/Course/Positive/DMengenrollDenganEnrollmentKeyValid.story
 Given Pengguna berada di Halaman Course Jaringan Komputer
 When Pengguna mengeklik tombol Tugas Awal
 When Pengguna mengeklik tombol Add Submission

@@ -18,7 +18,8 @@ public class HomePage extends PageObject {
     @FindBy(xpath ="html/body/div[1]/div[2]/header[1]/div/div/div[2]/div/form/div[1]/input[2]" )
     private WebElementFacade boxPassword;
 
-    @FindBy(className = "usertext")
+//    @FindBy(className = "usertext")
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/header[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[1]/a[1]/span[1]/span[1]")
     private WebElementFacade textNamauser;
 
     @FindBy(xpath = "html/body/div[1]/div[2]/header[1]/div/div/div[2]/div/form/div[1]/input[3]")
